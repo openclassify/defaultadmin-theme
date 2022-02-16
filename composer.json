@@ -25,5 +25,8 @@
         "psr-4": {
             "Visiosoft\\DefaultadminTheme\\": "src/"
         }
+    },
+    "require": {
+        "visiosoft/submenu-plugin": "*"
     }
 }

@@ -7,8 +7,8 @@
 <title>{{ trans('visiosoft.theme.defaultadmin::control_panel.title') }}
     &#8250; {{ trans(template.breadcrumbs.all()|keys|last)|raw }}</title>
 
-{# Favicons #}
-{{ favicons("visiosoft.theme.defaultadmin::img/favicon.png") }}
+{# Favicons#}
+{#{{ favicons("visiosoft.theme.defaultadmin::img/favicon.png") }}#}
 
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/fonts.css", ["parse"]) }}
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/bootstrap.css") }}
@@ -64,13 +64,17 @@
 <style type="text/css">
     {{ asset_inline("theme.css") }}
     {{ asset_inline("build.css") }}
+    {% if setting_value('visiosoft.theme.defaultadmin::dark_mode') %}
+    /*Dark mode is active*/
+    {{ asset_inline("visiosoft.theme.defaultadmin::css/dark_mode.css") }}
+    {% endif %}
 </style>
 
 {% if locale().isRtl() %}
-<style type="text/css">
-    {{ asset_inline("visiosoft.theme.defaultadmin::css/bootstrap.rtl.css") }}
-    {{ asset_inline("visiosoft.theme.defaultadmin::css/rtl.css") }}
-</style>
+    <style type="text/css">
+        {{ asset_inline("visiosoft.theme.defaultadmin::css/bootstrap.rtl.css") }}
+        {{ asset_inline("visiosoft.theme.defaultadmin::css/rtl.css") }}
+    </style>
 {% endif %}
 
 {{ constants() }}

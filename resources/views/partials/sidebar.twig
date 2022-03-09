@@ -1,5 +1,4 @@
 <aside id="sidebar" class="scrollbar {{ preference_value('visiosoft.theme.defaultadmin::sidebar_hover', setting_value('visiosoft.theme.defaultadmin::sidebar_hover')) ? 'hover' }}">
-
     <ul>
         {% for key, navigation in template.cp.navigation %}
             <li class="{{ navigation.active ? 'active' }} {{ navigation.class }} variant-border" data-slug="{{ navigation.slug }}">
@@ -10,5 +9,4 @@
             </li>
         {% endfor %}
     </ul>
-
 </aside>

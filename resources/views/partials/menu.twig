@@ -3,7 +3,13 @@
 <aside id="menu" class="scrollbar">
 
     <ul>
-        {% if not template.module.parent %}
+        {% set parent = template.module.parent %}
+
+        {% if template.module.slug in ['variables','system','redirects','repeaters'] %}
+            {% set parent = "anomaly.module.settings" %}
+        {% endif %}
+
+        {% if not parent %}
             {% for section in template.cp.sections.root().visible() %}
                 {{ menu.sections(template.cp.sections, section) }}
             {% endfor %}
@@ -16,20 +22,14 @@
                 </li>
             {% endfor %}
         {% else %}
-            {% for navigation in getSections(template.module.parent) %}
+            {% for navigation in getSections(parent) %}
                 <li>
                     <a href="{{ url(navigation.href) }}">
                         {{ trans(navigation.title) }}
                     </a>
                 </li>
             {% endfor %}
-            {% for navigation in getSections(template.module.namespace) %}
-                <li>
-                    <a href="{{ url(navigation.href) }}">
-                        {{ trans(navigation.title) }}
-                    </a>
-                </li>
-            {% endfor %}
+
         {% endif %}
     </ul>
 

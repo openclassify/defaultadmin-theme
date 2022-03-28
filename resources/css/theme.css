@@ -3301,3 +3301,18 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color')
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
 border-color: {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
 }
+.codemirror {
+    background-color: #ddd;
+}
+.codemirror textarea {
+    background: #aaa !important;
+}
+.cm-s-monokai.CodeMirror {
+    background: {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
+}
+.cm-s-monokai {
+    border: 1px solid {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
+}
+.CodeMirror div {
+    color: white !important;
+}

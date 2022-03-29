@@ -11,7 +11,6 @@ use Anomaly\Streams\Platform\Addon\Theme\Theme;
  */
 class DefaultadminTheme extends Theme
 {
-
     /**
      * This is an admin theme.
      *

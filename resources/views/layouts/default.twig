@@ -10,26 +10,21 @@
 <body class="variant-{{ random(8) }}{{ locale().isRtl() ? ' rtl' }} display--{{ preference_value('visiosoft.theme.defaultadmin::display', 'default') }} sidebars--{{ preference_value('visiosoft.theme.defaultadmin::sidebars', 'default') }}"
       data-variants="8">
 
-{#{% include "theme::partials/push" %}#}
-{#{% include "theme::partials/brand" %}#}
-{#{% include "theme::partials/navbar" %}#}
-{#{% include "theme::partials/header" %}#}
-
+{# {% include "theme::partials/push" %} #}
+{# {% include "theme::partials/brand" %} #}
+{# {% include "theme::partials/navbar" %} #}
+{# {% include "theme::partials/header" %} #}
 <section id="app">
-
-    {% include "theme::partials/topbar" %}
-    {% include "theme::partials/sidebar" %}
-    {% include "theme::partials/menu" %}
-
+    {% include "visiosoft.theme.defaultadmin::partials/logo" %}
+    {% include "visiosoft.theme.defaultadmin::partials/sidebar" %}
+    {% include "visiosoft.theme.defaultadmin::partials/menu" %}
     <main id="main" style="min-height: 1500px;">
-
-        {{ breadcrumb() }}
-
+        {% include "visiosoft.theme.defaultadmin::partials/topbar" %}
         {% if trans('module::addon.info') != 'module::addon.info' %}
             <div class="page-info m-2 small text-white alert rounded">{{ trans('module::addon.info') }}</div>
         {% endif %}
 
-        <div class="container-fluid">
+        <div class="container-fluid pt-1">
             {% include "theme::partials/messages" %}
             {% include "theme::partials/buttons" %}
         </div>
@@ -37,13 +32,9 @@
         {% block content %}{% endblock %}
 
     </main>
-
     {% include "theme::partials/footer" %}
     {% include "theme::partials/modals" %}
-
 </section>
-
 {% include "theme::partials/assets" %}
-
 </body>
 </html>

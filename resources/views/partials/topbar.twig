@@ -33,7 +33,6 @@
                         {% endfor %}
                         {{ addBlock('admin/topbar')|raw }}
                         <li class="nav-item dropdown floatright">
-
                             <a href="javascript:void(0);" data-toggle="dropdown">
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
@@ -54,6 +53,24 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item dropdown floatright" style="padding-top: 5px;">
+                            <a href="javascript:void(0);" data-toggle="dropdown">
+                                {{ img('theme::img/help.png').width('35').style("opacity: 0.3")|raw }}
+                            </a>
+                            <ul class="dropdown-menu-right dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a href="{{ setting_value('visiosoft.theme.defaultadmin::help_one_link') }}" target="_blank">
+                                        {{ setting_value('visiosoft.theme.defaultadmin::help_one_title') }}
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ setting_value('visiosoft.theme.defaultadmin::help_two_link') }}" target="_blank">
+                                        {{ setting_value('visiosoft.theme.defaultadmin::help_two_title') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         </li>
                     </ul>
                 </div>

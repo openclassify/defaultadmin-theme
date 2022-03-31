@@ -417,11 +417,30 @@ body.expand #topbar .topbar-left .logo span {
         width: 50% !important;
     }
 }
+#search {
+    border-bottom: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
+padding-top: 8px;
+}
+.btn-search {
+    display: inline-block;
+    margin-left: auto;
+    float: right;
+    padding: 0 !important;
+    margin-top: 5px;
+    background-color: inherit;
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
+}
+.dropdown-menu {
+    z-index: 9999;
+}
 #search .search-bar {
-    height: 70px;
-    color: #212121;
+    width: 70%;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
     font-size: 14px;
+    display: inline-block;
     border: none !important;
+    border-left: none !important;
+    border-right: none !important;
     box-shadow: none !important;
     background-color: transparent !important;
 }
@@ -462,9 +481,9 @@ box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
 
 .top-bar {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }};
-width: 100%;
 height:70px;
 display: table;
+width:100%;
 }
 .topbar-breadcrumb {
     display: table-cell;
@@ -2693,9 +2712,7 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
     opacity: 1;
     line-height: 18px;
 }
-.breadcrumb li.active {
-    background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }} !important;
-}
+
 .text-center {
     text-align: center;
 }
@@ -2709,16 +2726,6 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
     margin-bottom: 0;
     line-height: 1.25;
 }
-
-.breadcrumb {
-    border-radius: 0 !important;
-    background: #fff;
-    font-size: 0.8rem;
-}
-.breadcrumb a {
-    color: #888888;
-}
-
 html,
 body {
     height: 100%;
@@ -2989,12 +2996,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color') }} !imp
     margin-bottom: 1em;
     background-color: #BFD3E9;
 }
-.breadcrumb {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+
 .card {
     margin-bottom: 0.5rem !important;
 }
@@ -3226,7 +3228,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::input_placeholder_color')
 body {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
 }
-.card-block, .card-body, #footer, .modal-dialog, .breadcrumb, .user-action-dropdown,
+.card-block, .card-body, #footer, .modal-dialog, .user-action-dropdown,
 .card.card-flex .card-block, .nav.nav-sections li.active,
 .modal-content, .modal-header, .modal-body, .nav-pills, .dropdown-menu {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }} !important;
@@ -3315,4 +3317,19 @@ border-color: {{setting_value('visiosoft.theme.defaultadmin::input_focused_borde
 }
 .CodeMirror div {
     color: white !important;
+}
+.breadcrumb {
+    border-radius: 0 !important;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+    font-size: 0.8rem;
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.breadcrumb li.active {
+background-color: inherit !important;
+}
+.breadcrumb a {
+    opacity: 0.5;
 }

@@ -474,9 +474,9 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
     margin-top: 0;
     position: fixed;
     overflow-x: scroll;
-background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
-padding-bottom: 70px;
-box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
+    background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
+    padding-bottom: 70px;
+    box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
 }
 
 .top-bar {
@@ -3332,4 +3332,7 @@ background-color: inherit !important;
 }
 .breadcrumb a {
     opacity: 0.5;
+}
+#search .search-bar::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
 }

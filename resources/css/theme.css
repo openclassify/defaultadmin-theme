@@ -480,10 +480,14 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
 }
 
 .top-bar {
-background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }};
-height:70px;
-display: table;
-width:100%;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }};
+    height:70px;
+    display: table;
+    width: calc(100% - 240px);
+    position: fixed;
+    right:0;
+    top:0;
+    z-index: 9999;
 }
 .topbar-breadcrumb {
     display: table-cell;
@@ -628,9 +632,6 @@ select + .select2 {
         top: 50px;
         width: 0;
         transition: none;
-    }
-    .top-bar {
-        padding-top: 50px;
     }
     .logo-bar {
         width: 100%;

@@ -417,11 +417,30 @@ body.expand #topbar .topbar-left .logo span {
         width: 50% !important;
     }
 }
+#search {
+    border-bottom: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
+padding-top: 8px;
+}
+.btn-search {
+    display: inline-block;
+    margin-left: auto;
+    float: right;
+    padding: 0 !important;
+    margin-top: 5px;
+    background-color: inherit;
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
+}
+.dropdown-menu {
+    z-index: 9999;
+}
 #search .search-bar {
-    height: 70px;
-    color: #212121;
+    width: 70%;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
     font-size: 14px;
+    display: inline-block;
     border: none !important;
+    border-left: none !important;
+    border-right: none !important;
     box-shadow: none !important;
     background-color: transparent !important;
 }
@@ -455,16 +474,20 @@ body.expand #topbar .topbar-left .logo span {
     margin-top: 0;
     position: fixed;
     overflow-x: scroll;
-background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
-padding-bottom: 70px;
-box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
+    background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
+    padding-bottom: 70px;
+    box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
 }
 
 .top-bar {
-background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }};
-width: 100%;
-height:70px;
-display: table;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }};
+    height:70px;
+    display: table;
+    width: calc(100% - 240px);
+    position: fixed;
+    right:0;
+    top:0;
+    z-index: 9999;
 }
 .topbar-breadcrumb {
     display: table-cell;
@@ -609,9 +632,6 @@ select + .select2 {
         top: 50px;
         width: 0;
         transition: none;
-    }
-    .top-bar {
-        padding-top: 50px;
     }
     .logo-bar {
         width: 100%;
@@ -2693,9 +2713,7 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
     opacity: 1;
     line-height: 18px;
 }
-.breadcrumb li.active {
-    background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }} !important;
-}
+
 .text-center {
     text-align: center;
 }
@@ -2709,16 +2727,6 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
     margin-bottom: 0;
     line-height: 1.25;
 }
-
-.breadcrumb {
-    border-radius: 0 !important;
-    background: #fff;
-    font-size: 0.8rem;
-}
-.breadcrumb a {
-    color: #888888;
-}
-
 html,
 body {
     height: 100%;
@@ -2989,12 +2997,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color') }} !imp
     margin-bottom: 1em;
     background-color: #BFD3E9;
 }
-.breadcrumb {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+
 .card {
     margin-bottom: 0.5rem !important;
 }
@@ -3226,7 +3229,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::input_placeholder_color')
 body {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
 }
-.card-block, .card-body, #footer, .modal-dialog, .breadcrumb, .user-action-dropdown,
+.card-block, .card-body, #footer, .modal-dialog, .user-action-dropdown,
 .card.card-flex .card-block, .nav.nav-sections li.active,
 .modal-content, .modal-header, .modal-body, .nav-pills, .dropdown-menu {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }} !important;
@@ -3315,4 +3318,33 @@ border-color: {{setting_value('visiosoft.theme.defaultadmin::input_focused_borde
 }
 .CodeMirror div {
     color: white !important;
+}
+.breadcrumb {
+    border-radius: 0 !important;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+    font-size: 0.8rem;
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.breadcrumb li.active {
+background-color: inherit !important;
+}
+.breadcrumb a {
+    opacity: 0.5;
+}
+#search .search-bar::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+}
+
+.login-page {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(170deg, rgba(186, 39, 55, 1) 0%, rgba(186, 39, 55, 1) 60%, rgba(239, 197, 202, 1) 60%, rgba(239, 197, 202, 1) 0%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba2737', endColorstr='#efc5ca', GradientType=1);
+}
+
+.help-icon svg #Path_20512, #Path_20511 {
+    fill: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
 }

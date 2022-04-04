@@ -246,4 +246,27 @@ return [
             'default_value' => '#1e3060'
         ]
     ],
+    'help_one_title' => [
+        'type' => 'anomaly.field_type.text',
+        'config' => [
+            'default_value' => 'help'
+        ]
+    ],
+    'help_one_link' => [
+        'type' => 'anomaly.field_type.url',
+        'config' => [
+            'default_value' => '#'
+        ]
+    ],'help_two_title' => [
+        'type' => 'anomaly.field_type.text',
+        'config' => [
+            'default_value' => 'help'
+        ]
+    ],
+    'help_two_link' => [
+        'type' => 'anomaly.field_type.url',
+        'config' => [
+            'default_value' => '#'
+        ]
+    ]
 ];

@@ -130,5 +130,17 @@ return [
     ],
     'block_background_color' => [
         'name' => 'Block background color'
-    ]
+    ],
+    'help_one_title' => [
+        'name' => 'Help 1 title'
+    ],
+    'help_one_link' => [
+        'name' => 'Help 1 link'
+    ],
+    'help_two_title' => [
+        'name' => 'Help 2 title'
+    ],
+    'help_two_link' => [
+        'name' => 'Help 2 link'
+    ],
 ];

@@ -29,5 +29,5 @@ return [
             'default_value' => 'default',
             'mode'          => 'dropdown',
         ],
-    ],
+    ]
 ];

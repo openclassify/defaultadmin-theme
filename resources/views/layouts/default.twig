@@ -18,12 +18,12 @@
     {% include "visiosoft.theme.defaultadmin::partials/logo" %}
     {% include "visiosoft.theme.defaultadmin::partials/sidebar" %}
     {% include "visiosoft.theme.defaultadmin::partials/menu" %}
-    <main id="main" style="min-height: 1500px;">
+    <main id="main" style="min-height: 1500px; padding-top: 70px;">
         {% include "visiosoft.theme.defaultadmin::partials/topbar" %}
+        <div class="topbar-breadcrumb">{{ breadcrumb() }}</div>
         {% if trans('module::addon.info') != 'module::addon.info' %}
             <div class="page-info m-2 small text-white alert rounded">{{ trans('module::addon.info') }}</div>
         {% endif %}
-
         <div class="container-fluid pt-1">
             {% include "theme::partials/messages" %}
             {% include "theme::partials/buttons" %}

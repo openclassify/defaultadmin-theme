@@ -13,10 +13,6 @@
 #sidebar {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
 }
-.breadcrumb {
-    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
-    border-radius: 0 !important;
-}
 .nav.nav-sections.nav-stacked {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
 }
@@ -377,4 +373,44 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_col
 .text-muted {
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
     filter: brightness(80%);
+}
+#search {
+    border-bottom: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }};
+    padding-top: 8px;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }} !important;
+}
+.dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
+    background:{{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.breadcrumb li.active {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+    filter: color brightness(50%);
+}
+#search .search-bar {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+#search .search-bar::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }} !important;
+}
+.breadcrumb li.active {
+    background-color: inherit !important;
+}
+.btn-search {
+    display: inline-block;
+    margin-left: auto;
+    float: right;
+    padding: 0 !important;
+    margin-top: 5px;
+    background-color: inherit;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }};
+}
+.breadcrumb {
+    background: inherit !important;
+    border-radius: 0 !important;
+}
+.nav.nav-sections {
+    opacity: 0.95;
+}
+.help-icon svg #Path_20512, #Path_20511 {
+fill: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }};
 }

@@ -6,34 +6,17 @@
                 {% set name = user().username %}
             {% endif %}
             <div class="top-bar">
-                <div class="topbar-breadcrumb">{{ breadcrumb() }}</div>
                 <div class="topbar-useraction">
                     <ul class="nav navbar-nav">
                         {% for shortcut in template.cp.shortcuts %}
-                            <li class="nav-item shortcut {# dropdown #}">
+                            <li class="nav-item shortcut">
                                 <a {{ html_attributes(shortcut.attributes) }} {# data-toggle="dropdown" #}>
-                                    {# <span class="tag tag-danger">{{ icon(shortcut.icon) }} 2</span> #}
                                     {{ icon(shortcut.icon) }}
                                 </a>
-                                {# <ul class="dropdown-menu-right dropdown-menu"> #}
-                                {# <li class="dropdown-item"> #}
-                                {# <a href="/" target="_blank"> #}
-                                {# <i class="fa fa-external-link"></i> #}
-                                {# {{ trans('theme::control_panel.view_site') }} #}
-                                {# </a> #}
-                                {# </li> #}
-                                {# <li class="dropdown-item"> #}
-                                {# <a href="/admin/logout"> #}
-                                {# <i class="fa fa-power-off"></i> #}
-                                {# {{ trans('theme::control_panel.logout') }} #}
-                                {# </a> #}
-                                {# </li> #}
-                                {# </ul> #}
                             </li>
                         {% endfor %}
                         {{ addBlock('admin/topbar')|raw }}
                         <li class="nav-item dropdown floatright">
-
                             <a href="javascript:void(0);" data-toggle="dropdown">
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
@@ -54,6 +37,32 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+                        {% set helpColor = setting_value('visiosoft.theme.defaultadmin::primary_color') %}
+                        {% if setting_value('visiosoft.theme.defaultadmin::dark_mode') %}
+                            {% set helpColor = setting_value('visiosoft.theme.defaultadmin::dark_text_color') %}
+                        {% endif %}
+                        <li class="nav-item dropdown floatright help-icon" style="padding-top: 5px;">
+                            <a href="javascript:void(0);" data-toggle="dropdown">
+                                {{ img('visiosoft.theme.defaultadmin::img/guide.svg').data|raw }}
+                            </a>
+                            <ul class="dropdown-menu-right dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a href="{{ setting_value('visiosoft.theme.defaultadmin::help_one_link') }}"
+                                       target="_blank">
+                                        {{ setting_value('visiosoft.theme.defaultadmin::help_one_title') }}
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="{{ setting_value('visiosoft.theme.defaultadmin::help_two_link') }}"
+                                       target="_blank">
+                                        {{ setting_value('visiosoft.theme.defaultadmin::help_two_title') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown float-left">
+                            {% include "theme::partials/search-box" %}
                         </li>
                     </ul>
                 </div>

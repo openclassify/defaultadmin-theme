@@ -3338,13 +3338,13 @@ background-color: inherit !important;
 color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
 }
 
-.login-page {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(170deg, rgba(186, 39, 55, 1) 0%, rgba(186, 39, 55, 1) 60%, rgba(239, 197, 202, 1) 60%, rgba(239, 197, 202, 1) 0%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba2737', endColorstr='#efc5ca', GradientType=1);
+.login-form-block {
+    border-radius: 5px !important;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
 }
-
-.help-icon svg #Path_20512, #Path_20511 {
-    fill: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
+.login-form-block .form-control {
+    width: 100%;
+}
+.login-form-block .login-remember-me {
+    border-color: red;
 }

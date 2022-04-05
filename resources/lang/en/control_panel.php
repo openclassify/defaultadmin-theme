@@ -13,4 +13,6 @@ return [
 
     // Adv Export
     'choose_file_type' => 'Choose File Type For Export',
+
+    'login_to_admin' => ['name' => 'Login to admin']
 ];

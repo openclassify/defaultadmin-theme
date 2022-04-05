@@ -3346,5 +3346,62 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !im
     width: 100%;
 }
 .login-form-block .login-remember-me {
-    border-color: red;
+    color: #aaaaaa !important;
+}
+.login-form-forget a {
+    font-size: 0.7rem;
+    color: #aaaaaa !important;
+}
+.login-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(172deg,
+    #4764a4 0%,
+    #4764a4 60%,
+    #30426a 60%,
+    #30426a 0%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4764a4",
+    endColorstr="#30426a", GradientType=1);
+}
+.help-icon svg #Path_20512, #Path_20511 {
+fill: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
+}
+.login-logo img, .login-logo svg {
+    height: 80px !important;
+    width: 100px !important;
+}
+.login-site-name {
+    text-transform: uppercase !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+font-weight: bold;
+font-size: 2.5rem;
+padding-bottom: 1rem;
+}
+.login-site-subtitle {
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+opacity: 0.5;
+padding-bottom: 1rem;
+}
+.login-form-block {
+    padding: 30px 15px;
+box-shadow: 0px 0px 15px {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
+}
+.login-form-block .form-control::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+filter: brightness(80%);
+}
+.login-form-block .form-control {
+    border-color: #ddd !important;
+}
+.login-form-title h4 {
+color: #4764a4 !important;
+}
+.login-page-copyright {
+    padding-top: 25px;
+    color: #fff !important;
+    opacity: 0.3;
+    font-size: 0.7rem;
 }

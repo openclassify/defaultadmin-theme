@@ -2956,17 +2956,18 @@ body {
 .none-border {
     border: 0 !important;
 }
-.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label, .boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label:before {
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label:before {
     border-color: inherit !important;
 }
 .boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label {
-    background-color: #f6f6f6 !important;
+    background-color: #dddddd !important;
 }
 .boolean-field_type .switch__label:before {
     width: 23px !important;
     border: 0 !important;
     border-radius: 23px !important;
-    background: #e5e5e5 !important;
+    background: #EEEEEE !important;
 }
 .boolean-field_type .switch__label {
     height: 23px !important;
@@ -2975,6 +2976,10 @@ body {
     background-color: #dcd9d9 !important;
     flex: 0 0 46px !important;
     max-width: 46px !important;
+}
+.boolean-field_type .switch__checkbox:disabled + .switch__label,
+.boolean-field_type .switch__checkbox:checked:disabled + .switch__label {
+    opacity: 0.6 !important;
 }
 .form .field-group {
     margin-bottom: 1rem;

@@ -22,11 +22,6 @@
 }
 a { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }} !important; transition: 0.5s;}
 a:hover { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color') }} !important;}
-
-.form-control, .CodeMirror-scroll {
-    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}} !important;
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
-}
 .form-control::placeholder {
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
 }
@@ -138,7 +133,7 @@ body {
 .navbar-light .navbar-nav .nav-link {
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }};
 }
-div, p, span, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
+div, p, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
 }
 .btn-inverse {

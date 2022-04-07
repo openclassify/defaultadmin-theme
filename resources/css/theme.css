@@ -3160,7 +3160,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::text_color') }};
 .navbar-light .navbar-nav .nav-link {
 color: {{ setting_value('visiosoft.theme.defaultadmin::links_color') }};
 }
-p, span, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
+p, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
 color: {{ setting_value('visiosoft.theme.defaultadmin::text_color') }} !important;
 }
 .btn-inverse {

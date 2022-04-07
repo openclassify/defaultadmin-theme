@@ -22,11 +22,6 @@
 }
 a { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }} !important; transition: 0.5s;}
 a:hover { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color') }} !important;}
-
-.form-control, .CodeMirror-scroll {
-    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}} !important;
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
-}
 .form-control::placeholder {
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
 }

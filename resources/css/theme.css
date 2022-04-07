@@ -487,7 +487,7 @@ color: #ddd;
     position: fixed;
     right:0;
     top:0;
-    z-index: 9999;
+    z-index: 1039;
 }
 .topbar-breadcrumb {
     display: table-cell;
@@ -3051,10 +3051,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::links_color') }};
 a { color: {{ setting_value('visiosoft.theme.defaultadmin::links_color') }} !important; transition: 0.5s;}
 a:hover { color: {{ setting_value('visiosoft.theme.defaultadmin::links_hover_active_color') }} !important;}
 
-.form-control, .CodeMirror-scroll {
-background: {{ setting_value('visiosoft.theme.defaultadmin::input_background_color')}} !important;
-color: {{ setting_value('visiosoft.theme.defaultadmin::input_placeholder_color')}} !important;
-}
+
 .form-control::placeholder {
 color: {{ setting_value('visiosoft.theme.defaultadmin::input_placeholder_color')}} !important;
 }
@@ -3163,7 +3160,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::text_color') }};
 .navbar-light .navbar-nav .nav-link {
 color: {{ setting_value('visiosoft.theme.defaultadmin::links_color') }};
 }
-div, p, span, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
+p, span, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
 color: {{ setting_value('visiosoft.theme.defaultadmin::text_color') }} !important;
 }
 .btn-inverse {
@@ -3306,21 +3303,7 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color')
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
 border-color: {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
 }
-.codemirror {
-    background-color: #ddd;
-}
-.codemirror textarea {
-    background: #aaa !important;
-}
-.cm-s-monokai.CodeMirror {
-    background: {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
-}
-.cm-s-monokai {
-    border: 1px solid {{setting_value('visiosoft.theme.defaultadmin::input_focused_border_color')}} !important;
-}
-.CodeMirror div {
-    color: white !important;
-}
+
 .breadcrumb {
     border-radius: 0 !important;
     background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;

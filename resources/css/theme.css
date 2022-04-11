@@ -3354,9 +3354,8 @@ color: #aaa !important;
 .help-icon svg #Path_20512, #Path_20511 {
 fill: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }};
 }
-.login-logo img, .login-logo svg {
-    height: 80px !important;
-    width: 100px !important;
+.login-logo {
+padding-bottom: 2rem;
 }
 .login-site-name {
     text-transform: uppercase !important;

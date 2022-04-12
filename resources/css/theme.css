@@ -89,10 +89,10 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     margin-left: 7px;
 }
 #menu > ul > li > a:hover {
-    color: #eeeeee;
+    color: #fff;
 }
 #menu > ul > li.active > a, #menu > ul > li.highlighted > a {
-    color: #eeeeee;
+    color: #fff;
 }
 #menu > ul > li.section-label span {
     font-size: 10px;
@@ -116,10 +116,10 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     color: rgba(255, 255, 255, 0.3);
 }
 #menu > ul > li ul li a:hover {
-    color: #eeeeee;
+    color: #fff;
 }
 #menu > ul > li ul li.active > a {
-    color: #eeeeee;
+    color: #fff;
 }
 
 @media (max-width: 991px) {
@@ -3188,7 +3188,7 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
 #menu > ul > li > a,#sidebar > ul > li > a > span, #sidebar > ul > li > a > i {
 color: {{ setting_value('visiosoft.theme.defaultadmin::menu_link_color') }} !important;
 transition: 0.5s;
-opacity: 0.6;
+opacity: 0.7;
 }
 #menu > ul > li > a:hover {
     opacity: 1;

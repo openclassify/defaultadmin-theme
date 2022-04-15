@@ -8,25 +8,27 @@
             {{ icon(table.options.filters.filter_icon ?: 'filter') }}
             {{ trans(table.options.filters.filter_text ?: 'streams::button.filter') }}
         </div>
-        <div class="collapse" id="t10">
-            <div class="row px-1 relative">
-                {% for filter in table.filters %}
-                    <div class="col-sm-12 col-md-6 col-lg-3 px-2p" id="form-input-{{ loop.index }}">
-                        <div class="form-group filter_inputs" data-id="{{ loop.index }}">
-                            {{ filter.input|raw }}
+        <div id="t10">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for filter in table.filters %}
+                        <div class="col-sm-12 col-md-6 col-lg-4 px-2p" id="form-input-{{ loop.index }}">
+                            <div class="form-group filter_inputs" data-id="{{ loop.index }}">
+                                {{ filter.input|raw }}
+                            </div>
                         </div>
+                    {% endfor %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 px-2p position-relative">
+                        <button type="submit" class="btn btn-success float-left">
+                            {{ icon(table.options.filters.filter_icon ?: 'filter') }}
+                            {{ trans(table.options.filters.filter_text ?: 'streams::button.filter') }}
+                        </button>
+                        <a href="{{ url_current() }}{{ request_has('view') ? '?view=' ~ request_get('view') }}"
+                           class="btn btn-inverse float-left">
+                            {{ icon(table.options.filters.clear_icon ? table.options.filters.clear_icon) }}
+                            {{ trans(table.options.filters.clear_text ?: 'streams::button.clear') }}
+                        </a>
                     </div>
-                {% endfor %}
-                <div class="col-sm-12 col-md-6 col-lg-3 px-2p">
-                    <button type="submit" class="btn btn-success">
-                        {{ icon(table.options.filters.filter_icon ?: 'filter') }}
-                        {{ trans(table.options.filters.filter_text ?: 'streams::button.filter') }}
-                    </button>
-                    <a href="{{ url_current() }}{{ request_has('view') ? '?view=' ~ request_get('view') }}"
-                       class="btn btn-inverse">
-                        {{ icon(table.options.filters.clear_icon ? table.options.filters.clear_icon) }}
-                        {{ trans(table.options.filters.clear_text ?: 'streams::button.clear') }}
-                    </a>
                 </div>
             </div>
         </div>
@@ -62,6 +64,7 @@
 
     .px-2p {
         padding: 0 2px 0 2px;
+        margin-bottom: 2px;
     }
 
     .dont-collapse-sm {

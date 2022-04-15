@@ -105,7 +105,7 @@ return [
     'menu_link_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#ccc'
+            'default_value' => '#ffffff'
         ]
     ],
     'links_color' => [

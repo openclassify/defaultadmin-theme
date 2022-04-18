@@ -3527,4 +3527,8 @@ body.sidebars--static .logo {
     .logo-bar-table {
         height: 53px;
     }
+    .topbar-useraction img {
+    height: 45px;
+    width: 45px;
+    padding: 5px;
 }

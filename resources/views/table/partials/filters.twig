@@ -8,7 +8,7 @@
             {{ icon(table.options.filters.filter_icon ?: 'filter') }}
             {{ trans(table.options.filters.filter_text ?: 'streams::button.filter') }}
         </div>
-        <div id="t10">
+        <div class="collapse" id="t10">
             <div class="container-fluid">
                 <div class="row">
                     {% for filter in table.filters %}

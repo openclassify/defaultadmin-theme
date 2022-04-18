@@ -651,7 +651,8 @@ select + .select2 {
         text-align: right !important;
         margin: 5px 15px;
     }
-    .topbar-useraction img {
+
+    .user-action-dropdown {
         display: none;
     }
     .floatright {
@@ -662,6 +663,77 @@ select + .select2 {
     }
 }
 @media (max-width: 767px) {
+    .logo-bar {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: +999;
+    }
+    .logo-bar-table {
+        display: table;
+        width: 100%;
+        height: 50px;
+        background: #273759;
+    }
+    .logo {
+        text-align: right !important;
+        margin: 5px 15px;
+    }
+    .topbar-useraction img {
+        height:45px;
+        width: 45px;
+        padding: 5px;
+    }
+    .dont-collapse-sm {
+        margin-top: 10px !important;
+    }
+    tfoot {
+        display: block;
+    }
+    tfoot button, tfoot a, tfoot span {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    tfoot tr th {
+        text-align: center;
+        padding-bottom: 0;
+    }
+    .table tfoot .pagination {
+        margin: 0 !important;
+    }
+    .table tfoot .pull-left, .table tfoot .pull-right  {
+        float: none;
+    }
+    .pagination-sm {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .table tfoot td {
+        padding-left: 0 !important;
+        text-align: center !important;
+        padding-top: 5px !important;
+    }
+    .table nobr a {
+        display: block;
+        margin-top: 5px;
+    }
+    .table-stack td {
+        padding-top: 30px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        text-align: right !important;
+    }
+    .user-action-dropdown {
+        display: none;
+    }
+    .floatright {
+        margin-right: 0 !important;
+    }
+    .topbar-breadcrumb {
+        padding: 0px 0 !important;
+    }
     #sidebar.open, #sidebar.hover:hover {
         width: 50% !important;
     }

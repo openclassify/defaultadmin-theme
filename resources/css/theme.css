@@ -3462,7 +3462,18 @@ color: #4764a4 !important;
     font-size: 0.7rem;
 }
 
+body.sidebars--static .button-menu {
+    display: table;
+    text-align: center;
+    padding-top: 10px;
+}
 
+body.sidebars--static .menu-action {
+    display: none;
+}
+body.sidebars--static .logo {
+    display: inline-block;
+}
 
 @media (max-width: 991px) {
     .top-bar {
@@ -3506,5 +3517,14 @@ color: #4764a4 !important;
     .menu-action {
         text-align: left;
         padding-left: 14px;
+    }
+    body.sidebars--static .logo {
+        display: none;
+    }
+    body.sidebars--static .menu-action {
+        display: block;
+    }
+    .logo-bar-table {
+        height: 53px;
     }
 }

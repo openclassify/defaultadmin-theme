@@ -134,6 +134,9 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
         width: 240px !important;
     }
 }
+.highcharts-credits {
+    display: none !important;
+}
 @media (max-width: 767px) {
     body.expand #menu {
         display: block;
@@ -685,6 +688,7 @@ select + .select2 {
         height:45px;
         width: 45px;
         padding: 5px;
+        margin-right: 15px;
     }
     .dont-collapse-sm {
         margin-top: 10px !important;
@@ -3528,7 +3532,9 @@ body.sidebars--static .logo {
         height: 53px;
     }
     .topbar-useraction img {
-    height: 45px;
-    width: 45px;
-    padding: 5px;
+        height: 45px;
+        width: 45px;
+        padding: 5px;
+        margin-right: 15px;
+    }
 }

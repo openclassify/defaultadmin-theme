@@ -21,7 +21,7 @@
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
                                 </button>
-                                <img src="{{ user().gravatar.path }}" width="47" class="rounded-circle">
+                                <img src="{{ img(user().file).url }}" width="47" class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu-right dropdown-menu">
                                 <li class="dropdown-item">

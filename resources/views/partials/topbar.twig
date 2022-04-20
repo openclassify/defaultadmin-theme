@@ -21,7 +21,7 @@
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
                                 </button>
-                                <img src="{{ img(user().file).url }}" width="47" class="rounded-circle">
+                                {{ img(user().file).width(47).class('rounded-circle')|raw }}
                             </a>
                             <ul class="dropdown-menu-right dropdown-menu">
                                 <li class="dropdown-item">

@@ -102,6 +102,9 @@ body {
 .table td a:hover {
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color')}};
 }
+#Path_21097, #Line_828, #Path_21098 {
+fill: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
 .page-info {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}};
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}} !important;
@@ -408,4 +411,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }
 }
 .help-icon svg #Path_20512, #Path_20511 {
 fill: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }};
+}
+.progress-end-date {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
 }

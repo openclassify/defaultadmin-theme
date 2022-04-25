@@ -6,9 +6,6 @@
 
 {{ template.includes.render('cp_scripts')|raw }}
 
-<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-{{ asset_add("scripts.js", "theme::js/paddle.js") }}
-
 <script type="text/javascript">
     {% for script in asset_inlines("scripts.js") %}
     {{ script|raw }}

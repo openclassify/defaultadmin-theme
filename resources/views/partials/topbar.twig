@@ -21,18 +21,22 @@
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
                                 </button>
-                                {{ img(user().file).width(47).class('rounded-circle')|raw }}
+                                {% if user().file is not empty %}
+                                    {{ img(user().file).width(47).class('rounded-circle')|raw }}
+                                {% else %}
+                                    {{ img('theme::img/no-avatar.svg').width(47).class('rounded-circle')|raw }}
+                                {% endif %}
                             </a>
                             <ul class="dropdown-menu-right dropdown-menu">
                                 <li class="dropdown-item">
                                     <a href="/" target="_blank">
-                                        <i class="fa fa-external-link"></i>
+                                        {{ img('theme::img/view_site.svg').data|raw }}
                                         {{ trans('theme::control_panel.view_site') }}
                                     </a>
                                 </li>
                                 <li class="dropdown-item">
                                     <a href="/admin/logout">
-                                        <i class="fa fa-power-off"></i>
+                                        {{ img('theme::img/logout.svg').data|raw }}
                                         {{ trans('theme::control_panel.logout') }}
                                     </a>
                                 </li>

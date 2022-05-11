@@ -7,7 +7,7 @@ return [
             'general_setting' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.general_setting.name',
                 'fields' => [
-                    'title', 'sidebar_hover', 'login_icon', 'panel_icon', 'footer_copyright_org_name'
+                    'title', 'interactive_side_menu','sidebar_hover', 'login_icon', 'panel_icon', 'footer_copyright_org_name'
                 ],
             ],
             'light_mode' => [

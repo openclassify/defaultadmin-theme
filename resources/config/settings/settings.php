@@ -2,8 +2,8 @@
 
 return [
     'sidebar_hover' => 'anomaly.field_type.boolean',
-    'navigation'    => [
-        'type'       => 'anomaly.field_type.textarea',
+    'navigation' => [
+        'type' => 'anomaly.field_type.textarea',
         'input_view' => 'visiosoft.theme.defaultadmin::admin/navigation/settings',
     ],
     "dark_mode" => [
@@ -13,25 +13,25 @@ return [
         ]
     ],
     "login_icon" => [
-        "type"   => "anomaly.field_type.file",
+        "type" => "anomaly.field_type.file",
         "config" => [
-            "folders"       => ['images'],
+            "folders" => ['images'],
         ]
     ],
     "panel_icon" => [
-        "type"   => "anomaly.field_type.file",
+        "type" => "anomaly.field_type.file",
         "config" => [
-            "folders"       => ['images'],
+            "folders" => ['images'],
         ]
     ],
     "title" => [
-        "type"   => "anomaly.field_type.text",
+        "type" => "anomaly.field_type.text",
         "config" => [
             "default_value" => 'OpenClassify',
         ]
     ],
     "footer_copyright_org_name" => [
-        "type"   => "anomaly.field_type.text",
+        "type" => "anomaly.field_type.text",
         "config" => [
             "default_value" => 'OpenClassify, Inc',
         ]
@@ -49,55 +49,55 @@ return [
 //        ]
 //    ],
     "active_sidebar_border_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#4eb6a2',
         ]
     ],
     "primary_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#1d3557',
         ]
     ],
     "secondary_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#213c62',
         ]
     ],
     "background_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#f1f1f1',
         ]
     ],
     "block_background_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#FFF',
         ]
     ],
     "negative_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#f06461',
         ]
     ],
     "positive_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#4eb6a2',
         ]
     ],
     "warning_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#fee28b',
         ]
     ],
     "info_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#54acdb',
         ]
@@ -151,49 +151,49 @@ return [
         ]
     ],
     "dark_primary_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#1d3557',
         ]
     ],
     "dark_secondary_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#213c62',
         ]
     ],
     "dark_background_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#384774',
         ]
     ],
     "dark_negative_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#993434',
         ]
     ],
     "dark_positive_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#5ba587',
         ]
     ],
     "dark_warning_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#c89332',
         ]
     ],
     "dark_info_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#4679bd',
         ]
     ],
     "dark_active_sidebar_border_color" => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#5ba587',
         ]
@@ -257,7 +257,7 @@ return [
         'config' => [
             'default_value' => '#'
         ]
-    ],'help_two_title' => [
+    ], 'help_two_title' => [
         'type' => 'anomaly.field_type.text',
         'config' => [
             'default_value' => 'help'
@@ -268,5 +268,12 @@ return [
         'config' => [
             'default_value' => '#'
         ]
-    ]
+    ],
+    'interactive_side_menu' => [
+        'type' => 'anomaly.field_type.boolean',
+        'bind' => 'admin_theme::interactive_side_menu',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
 ];

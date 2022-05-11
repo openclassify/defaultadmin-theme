@@ -143,4 +143,7 @@ return [
     'help_two_link' => [
         'name' => 'Help 2 link'
     ],
+    'interactive_side_menu' => [
+        'name' => 'interactive side menu',
+    ],
 ];

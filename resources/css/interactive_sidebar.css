@@ -1,0 +1,25 @@
+#sidebar > ul > li > a {
+    text-align: left;
+}
+
+#sidebar a {
+    color: #f1f1f1 !important;
+    opacity: 0.7;
+    display: block;
+}
+
+#sidebar a:hover, #sidebar a:active, #sidebar a:focus {
+    color: #f1f1f1 !important;
+    opacity: 1;
+}
+
+#sidebar > ul > li > a .title {
+    display: inline;
+}
+
+#sidebar .list-arrow {
+    font-size: 11px;
+    display: block;
+    width: 20px;
+    float: right;
+}

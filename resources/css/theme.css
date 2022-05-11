@@ -614,7 +614,7 @@ select + .select2 {
     margin-bottom: 15px;
 }
 .collapse {
-    display: block;
+    display: none;
 }
 @media (max-width: 768px) {
     .collapse {

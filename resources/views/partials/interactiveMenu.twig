@@ -1,0 +1,91 @@
+<div class="logo-bar">
+    <div class="button-menu logo-bar-table">
+        <div class="align-middle text-center logo-bar-cell menu-action">
+            <button href="javascript:void(0);" type="button" class="button-menu-mobile"
+                    onclick="$('#sidebar').toggleClass('open'); $('body').toggleClass('expand');">
+                <em class="fa fa-bars"></em>
+            </button>
+        </div>
+        <div class="align-middle text-center logo-bar-cell logo">
+            <a href="{{ url('admin') }}" class="logo variant-logo">
+                {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}"
+                         alt="site icon">
+                {% else %}
+                    {{ img('theme::img/panel-icon.svg').data|raw }}
+                {% endif %}
+            </a>
+        </div>
+    </div>
+</div>
+{{ asset_style('visiosoft.theme.defaultadmin::css/interactive_sidebar.css') }}
+<aside id="sidebar" style="width: 240px;"
+       class="scrollbar {{ preference_value('visiosoft.theme.defaultadmin::sidebar_hover', setting_value('visiosoft.theme.defaultadmin::sidebar_hover')) ? 'hover' }}">
+    <ul class="">
+        {% for navigation_key,navigation in getInteractiveMenus() %}
+            <li class="{{ navigation.active ? 'active' }} variant-border" data-slug="{{ navigation.slug }}">
+                <a title="{{ trans(navigation.title) }}" data-toggle="collapse"
+                   data-target="#{{ navigation_key }}">
+                    <div class="title-box">
+                        <span class="icon">{{ navigation.icon.output|raw }}</span>
+                        <span class="title text-truncate">{{ trans(navigation.title) }}</span>
+                    </div>
+{#                    <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
+                </a>
+                <div class="collapse ml-2" id="{{ navigation_key }}" aria-expanded="false">
+                    <ul class="flex-column px-2 nav">
+                        {% if count(navigation.menus.sub_menus ) %}
+                            <li class="nav-item">
+                                <a title="{{ trans(navigation.title) }}" class=""
+                                   data-toggle="collapse"
+                                   data-target="#{{ navigation_key }}sub">
+                                    <span class="title text-truncate">{{ trans(navigation.title) }}</span>
+{#                                    <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
+                                </a>
+                                <div class="collapse ml-2" id="{{ navigation_key }}sub" aria-expanded="false">
+                                    <ul class="flex-column px-1 nav">
+                                        {% for main_navigation in navigation.menus.main %}
+                                            <li class="nav-item">
+                                                <a class="nav-link py-0 d-block"
+                                                   href="{{ url(main_navigation.href) }}">{{ trans(main_navigation.title) }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                            {% for sub_menus_key,sub_menus in navigation.menus.sub_menus %}
+                                <li class="nav-item">
+                                    <a title="{{ trans(sub_menus.title) }}" class=""
+                                       data-toggle="collapse"
+                                       data-target="#{{ navigation_key }}{{ sub_menus_key }}">
+                                        <span class="title text-truncate">{{ trans(sub_menus.title) }}</span>
+{#                                        <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
+                                    </a>
+                                    <div class="collapse ml-2" id="{{ navigation_key }}{{ sub_menus_key }}"
+                                         aria-expanded="false">
+                                        <ul class="flex-column px-1 nav">
+                                            {% for sub_menu in sub_menus.links %}
+                                                <li class="nav-item"><a class="nav-link py-0 d-block"
+                                                                        href="{{ url(sub_menu.href) }}">{{ trans(sub_menu.title) }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            {% for main_navigation in navigation.menus.main %}
+                                <li class="nav-item">
+                                    <a href="{{ url(main_navigation.href) }}"
+                                       title="{{ trans(main_navigation.title) }}">
+                                        <span class="title text-truncate">{{ trans(main_navigation.title) }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>

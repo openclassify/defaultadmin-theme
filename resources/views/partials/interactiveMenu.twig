@@ -1,10 +1,18 @@
 <div class="logo-bar">
     <div class="button-menu logo-bar-table">
         <div class="align-middle text-center logo-bar-cell menu-action">
-            <button href="javascript:void(0);" type="button" class="button-menu-mobile"
-                    onclick="$('#sidebar').toggleClass('open'); $('body').toggleClass('expand');">
-                <em class="fa fa-bars"></em>
-            </button>
+            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <button id="menu-toggle-2" type="button" class="button-menu-mobile web-sidebar-btn">
+                            {{ img('theme::img/menu-icon.svg').data()|raw }}
+                        </button>
+                        <button type="button" class="button-menu-mobile mobile-sidebar-btn" id="menu-toggle">
+                            {{ img('theme::img/menu-icon.svg').data()|raw }}
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="align-middle text-center logo-bar-cell logo">
             <a href="{{ url('admin') }}" class="logo variant-logo">
@@ -18,74 +26,74 @@
         </div>
     </div>
 </div>
-{{ asset_style('visiosoft.theme.defaultadmin::css/interactive_sidebar.css') }}
-<aside id="sidebar" style="width: 240px;"
-       class="scrollbar {{ preference_value('visiosoft.theme.defaultadmin::sidebar_hover', setting_value('visiosoft.theme.defaultadmin::sidebar_hover')) ? 'hover' }}">
-    <ul class="">
-        {% for navigation_key,navigation in getInteractiveMenus() %}
-            <li class="{{ navigation.active ? 'active' }} variant-border" data-slug="{{ navigation.slug }}">
-                <a title="{{ trans(navigation.title) }}" data-toggle="collapse"
-                   data-target="#{{ navigation_key }}">
-                    <div class="title-box">
-                        <span class="icon">{{ navigation.icon.output|raw }}</span>
-                        <span class="title text-truncate">{{ trans(navigation.title) }}</span>
-                    </div>
-{#                    <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
-                </a>
-                <div class="collapse ml-2" id="{{ navigation_key }}" aria-expanded="false">
-                    <ul class="flex-column px-2 nav">
-                        {% if count(navigation.menus.sub_menus ) %}
+
+{{ asset_style('theme::css/ocify-sidebar.css') }}
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav-pills nav-stacked" id="ocify-menu">
+            {% for navigation_key,navigation in getInteractiveMenus() %}
+                <li class="sidebar-main {{ navigation.active ? 'active' }}">
+                    <a class="sidebar-icon" title="{{ trans(navigation.title) }}">
+                        {{ navigation.icon.output|raw }}
+                    </a>
+                    <ul class="nav-pills nav-stacked sidebar-items" style="list-style-type:none;{{ navigation.active ? '':'display: none' }}">
+                        {% if not count(navigation.menus.sub_menus ) %}
+                            {% for main_navigation in navigation.menus.main %}
+                                <li>
+                                    <a title="{{ trans(main_navigation.title) }}" href="{{ url(main_navigation.href) }}"
+                                       class="sidebar-title">{{ trans(main_navigation.title) }}</a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
                             <li class="nav-item">
-                                <a title="{{ trans(navigation.title) }}" class=""
+                                <a title="{{ trans(navigation.title) }}"
+                                   class="sidebar-title"
                                    data-toggle="collapse"
                                    data-target="#{{ navigation_key }}sub">
-                                    <span class="title text-truncate">{{ trans(navigation.title) }}</span>
-{#                                    <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
+                                    {{ trans(navigation.title) }}
                                 </a>
                                 <div class="collapse ml-2" id="{{ navigation_key }}sub" aria-expanded="false">
-                                    <ul class="flex-column px-1 nav">
+                                    <ul class="flex-column nav">
                                         {% for main_navigation in navigation.menus.main %}
-                                            <li class="nav-item">
-                                                <a class="nav-link py-0 d-block"
-                                                   href="{{ url(main_navigation.href) }}">{{ trans(main_navigation.title) }}</a>
+                                            <li class="sub-item">
+                                                <a href="{{ url(main_navigation.href) }}" class="text-truncate sidebar-title">
+                                                    {{ img('theme::img/submenu-icon.svg').data()|raw }}
+                                                    {{ trans(main_navigation.title) }}
+                                                </a>
                                             </li>
                                         {% endfor %}
                                     </ul>
                                 </div>
                             </li>
+
                             {% for sub_menus_key,sub_menus in navigation.menus.sub_menus %}
                                 <li class="nav-item">
-                                    <a title="{{ trans(sub_menus.title) }}" class=""
+                                    <a title="{{ trans(sub_menus.title) }}"
+                                       class="sidebar-title"
                                        data-toggle="collapse"
                                        data-target="#{{ navigation_key }}{{ sub_menus_key }}">
-                                        <span class="title text-truncate">{{ trans(sub_menus.title) }}</span>
-{#                                        <span class="list-arrow"><em class="fa fa-chevron-down"></em></span>#}
+                                        {{ trans(sub_menus.title) }}
                                     </a>
                                     <div class="collapse ml-2" id="{{ navigation_key }}{{ sub_menus_key }}"
                                          aria-expanded="false">
-                                        <ul class="flex-column px-1 nav">
+                                        <ul class="flex-column nav">
                                             {% for sub_menu in sub_menus.links %}
-                                                <li class="nav-item"><a class="nav-link py-0 d-block"
-                                                                        href="{{ url(sub_menu.href) }}">{{ trans(sub_menu.title) }}</a>
+                                                <li class="sub-item">
+                                                    <a href="{{ url(sub_menu.href) }}" class="text-truncate sidebar-title">
+                                                        {{ img('theme::img/submenu-icon.svg').data()|raw }}
+                                                        {{ trans(sub_menu.title) }}
+                                                    </a>
                                                 </li>
                                             {% endfor %}
                                         </ul>
                                     </div>
                                 </li>
                             {% endfor %}
-                        {% else %}
-                            {% for main_navigation in navigation.menus.main %}
-                                <li class="nav-item">
-                                    <a href="{{ url(main_navigation.href) }}"
-                                       title="{{ trans(main_navigation.title) }}">
-                                        <span class="title text-truncate">{{ trans(main_navigation.title) }}</span>
-                                    </a>
-                                </li>
-                            {% endfor %}
                         {% endif %}
                     </ul>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-</aside>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{{ asset_script('theme::js/ocify-sidebar.js') }}

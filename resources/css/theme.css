@@ -237,6 +237,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     position: fixed;
     top: 0;
     left:0;
+    z-index: 2000;
 }
 .logo-bar-table {
     display: table;

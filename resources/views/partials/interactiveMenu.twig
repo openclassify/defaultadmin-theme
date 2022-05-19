@@ -36,7 +36,9 @@
                     <a class="sidebar-group-link" title="{{ group.title }}" data-toggle="collapse" data-target="#{{ group_key }}M"
                        aria-expanded="{{ group.active ? 'true' : 'false' }}">
                         <span>
-                            <span class="icon"><i class="fa fa-dashboard"></i></span>
+                            <span class="icon">
+                                {{ img(group.icon).data|raw }}
+                            </span>
                             <span class="title">{{ group.title }}</span>
                         </span>
                         <i class="fa fa-chevron-down chevron"></i>

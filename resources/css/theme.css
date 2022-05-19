@@ -3483,7 +3483,14 @@ body.sidebars--static .logo {
     display: inline-block;
 }
 
+.login-form-block .form-control {
+    min-width: 300px;
+}
+
 @media (max-width: 991px) {
+    .login-form-block .form-control {
+        min-width: 200px;
+    }
     .top-bar {
     background: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color')}};
     width: calc(100% - 60px);

@@ -53,7 +53,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     font-family: 'Poppins';
     overflow: visible;
     padding-top: 0px;
-    margin-left: 240px;
+    margin-left: 265px;
     background-size: 55px 100px;
     background-repeat: no-repeat;
     transition: min-height 100ms;
@@ -170,7 +170,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
 #footer {
     padding: 1em 3em;
     overflow: hidden;
-    margin-left: 240px;
+    margin-left: 265px;
     background: #ffffff;
 }
 #footer ul {

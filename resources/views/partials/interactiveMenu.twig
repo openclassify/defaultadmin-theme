@@ -1,99 +1,443 @@
-<div class="logo-bar">
-    <div class="button-menu logo-bar-table">
-        <div class="align-middle text-center logo-bar-cell menu-action">
-            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <button id="menu-toggle-2" type="button" class="button-menu-mobile web-sidebar-btn">
-                            {{ img('theme::img/menu-icon.svg').data()|raw }}
-                        </button>
-                        <button type="button" class="button-menu-mobile mobile-sidebar-btn" id="menu-toggle">
-                            {{ img('theme::img/menu-icon.svg').data()|raw }}
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="align-middle text-center logo-bar-cell logo">
-            <a href="{{ url('admin') }}" class="logo variant-logo">
-                {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
-                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}"
-                         alt="site icon">
-                {% else %}
-                    {{ img('theme::img/panel-icon.svg').data|raw }}
-                {% endif %}
-            </a>
-        </div>
-    </div>
-</div>
-
 {{ asset_style('theme::css/ocify-sidebar.css') }}
 <div id="wrapper">
+    <div class="logo-bar">
+        <div class="button-menu logo-bar-table">
+            <div class="align-middle text-center logo-bar-cell menu-action">
+                <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <button id="menu-toggle-2" type="button" class="button-menu-mobile web-sidebar-btn">
+                                {{ img('theme::img/menu-icon.svg').data()|raw }}
+                            </button>
+                            <button type="button" class="button-menu-mobile mobile-sidebar-btn" id="menu-toggle">
+                                {{ img('theme::img/menu-icon.svg').data()|raw }}
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="align-middle text-left logo-bar-cell logo">
+                <a href="{{ url('admin') }}" class="logo variant-logo">
+                    {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
+                        <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}"
+                             alt="site icon">
+                    {% else %}
+                        {{ img('theme::img/panel-icon.svg').data|raw }}
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav nav-pills nav-stacked" id="ocify-menu">
-            {% for navigation_key,navigation in getInteractiveMenus() %}
-                <li class="sidebar-main {{ navigation.active ? 'active' }}">
-                    <a class="sidebar-icon" title="{{ trans(navigation.title) }}">
-                        {{ navigation.icon.output|raw }}
+        {% include "theme::partials/search-box" %}
+        <ul class="sidebar-nav nav-stacked" id="ocify-menu">
+            {% for group_key,group in getInteractiveMenus() %}
+                <li class="sidebar-group {{ group.active ? 'active' }}">
+                    <a class="sidebar-group-link" title="AAA" data-toggle="collapse" data-target="#{{ group_key }}M"
+                       aria-expanded="{{ group.active ? 'true' : 'false' }}">
+                        <span>
+                            <span class="icon"><i class="fa fa-dashboard"></i></span>
+                            <span class="title">{{ group.title }}</span>
+                        </span>
+                        <i class="fa fa-chevron-down chevron"></i>
                     </a>
-                    <ul class="nav-pills nav-stacked sidebar-items" style="list-style-type:none;{{ navigation.active ? '':'display: none' }}">
-                        {% if not count(navigation.menus.sub_menus ) %}
-                            {% for main_navigation in navigation.menus.main %}
-                                <li>
-                                    <a title="{{ trans(main_navigation.title) }}" href="{{ url(main_navigation.href) }}"
-                                       class="sidebar-title">{{ trans(main_navigation.title) }}</a>
-                                </li>
-                            {% endfor %}
-                        {% else %}
-                            <li class="nav-item">
-                                <a title="{{ trans(navigation.title) }}"
-                                   class="sidebar-title"
-                                   data-toggle="collapse"
-                                   data-target="#{{ navigation_key }}sub">
-                                    {{ trans(navigation.title) }}
-                                </a>
-                                <div class="collapse ml-2" id="{{ navigation_key }}sub" aria-expanded="false">
-                                    <ul class="flex-column nav">
-                                        {% for main_navigation in navigation.menus.main %}
-                                            <li class="sub-item">
-                                                <a href="{{ url(main_navigation.href) }}" class="text-truncate sidebar-title">
-                                                    {{ img('theme::img/submenu-icon.svg').data()|raw }}
-                                                    {{ trans(main_navigation.title) }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </li>
-
-                            {% for sub_menus_key,sub_menus in navigation.menus.sub_menus %}
-                                <li class="nav-item">
-                                    <a title="{{ trans(sub_menus.title) }}"
-                                       class="sidebar-title"
+                    <div class="collapse {{ group.active ? 'in' }} group-sublist" id="{{ group_key }}M" aria-expanded="false">
+                        <ul class="nav-stacked sidebar-items">
+                            {% for addon_key,addon in group.addons %}
+                                <li class="nav-item sidebar-addon {{ addon.active ? 'active' }}">
+                                    <a title="{{ trans(addon.title) }}"
+                                       class="sidebar-title sidebar-addon-link"
                                        data-toggle="collapse"
-                                       data-target="#{{ navigation_key }}{{ sub_menus_key }}">
-                                        {{ trans(sub_menus.title) }}
+                                       aria-expanded="{{ addon.active ? 'true' : 'false' }}"
+                                       data-target="#{{ addon_key }}">
+                                        <span>
+                                            <i class="fa fa-circle"></i>
+                                            {{ trans(addon.title) }}
+                                        </span>
+                                        <i class="fa fa-chevron-down"></i>
                                     </a>
-                                    <div class="collapse ml-2" id="{{ navigation_key }}{{ sub_menus_key }}"
-                                         aria-expanded="false">
+                                    <div class="sidebar-sublist collapse {{ addon.active ? 'in' }} ml-2" id="{{ addon_key }}" aria-expanded="false">
                                         <ul class="flex-column nav">
-                                            {% for sub_menu in sub_menus.links %}
-                                                <li class="sub-item">
-                                                    <a href="{{ url(sub_menu.href) }}" class="text-truncate sidebar-title">
-                                                        {{ img('theme::img/submenu-icon.svg').data()|raw }}
-                                                        {{ trans(sub_menu.title) }}
+                                            {% for section in addon.sections %}
+                                                <li class="sub-item {{ section.active ? 'active' }}">
+                                                    <a href="{{ section.href }}" title="{{ trans(section.title) }}"
+                                                       class="text-truncate sidebar-title">
+                                                        <i class="fa fa-circle"></i>
+                                                        {{ trans(section.title) }}
                                                     </a>
                                                 </li>
+
                                             {% endfor %}
                                         </ul>
                                     </div>
                                 </li>
                             {% endfor %}
-                        {% endif %}
-                    </ul>
+                        </ul>
+                    </div>
                 </li>
             {% endfor %}
+
+            <li class="sidebar-group active">
+                <a class="sidebar-group-link" title="AAA" data-toggle="collapse" data-target="#A"
+                   aria-expanded="false">
+                    <span>
+                        <span class="icon"><i class="fa fa-dashboard"></i></span>
+                        <span class="title">Dashboard</span>
+                    </span>
+                    <i class="fa fa-chevron-down chevron"></i>
+                </a>
+                <div class="collapse group-sublist" id="A" aria-expanded="false">
+                    <ul class="nav-stacked sidebar-items">
+                        <li class="nav-item sidebar-addon active">
+                            <a title="AAA A"
+                               class="sidebar-title sidebar-addon-link"
+                               data-toggle="collapse"
+                               data-target="#AAAAsub">
+                                <span>
+                                    <i class="fa fa-circle"></i>
+                                    Ads
+                                </span>
+                                <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <div class="collapse sidebar-sublist" id="AAAAsub" aria-expanded="false">
+                                <ul class="flex-column">
+                                    <li class="sub-item">
+                                        <a href="#"
+                                           class="text-truncate sidebar-title">
+                                            Status
+                                        </a>
+                                    </li>
+                                    <li class="sub-item active">
+                                        <a href="#"
+                                           class="text-truncate sidebar-title">
+                                            Options
+                                        </a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="#"
+                                           class="text-truncate sidebar-title">
+                                            Options Value
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item sidebar-addon">
+                            <a title="AAA A"
+                               class="sidebar-title"
+                               data-toggle="collapse"
+                               data-target="#AAABsub">
+                                <i class="fa fa-circle"></i>
+                                Customfields
+                            </a>
+                            <div class="collapse ml-2" id="AAABsub" aria-expanded="false">
+                                <ul class="flex-column nav">
+                                    <li class="sub-item">
+                                        <a href="#"
+                                           class="text-truncate sidebar-title">
+                                            AAA B 1
+                                        </a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="#"
+                                           class="text-truncate sidebar-title">
+                                            AAA B 2
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </div>
 {{ asset_script('theme::js/ocify-sidebar.js') }}
+
+
+
+
+
+
+
+
+
+
+{#<style>#}
+
+
+{#    #wrapper {#}
+{#        position: fixed;#}
+{#        height: 100%;#}
+{#        padding-left: 0;#}
+{#        -webkit-transition: all 0.5s ease;#}
+{#        -moz-transition: all 0.5s ease;#}
+{#        -o-transition: all 0.5s ease;#}
+{#        transition: all 0.5s ease;#}
+{#        overflow: hidden;#}
+{#    }#}
+
+{#    #wrapper.toggled {#}
+{#        padding-left: 250px;#}
+{#        overflow: hidden;#}
+{#    }#}
+
+{#    #sidebar-wrapper {#}
+{#        z-index: 1000;#}
+{#        position: absolute;#}
+{#        margin-top: 68px;#}
+
+{#        left: 250px;#}
+{#        width: 0;#}
+{#        height: 100%;#}
+{#        margin-left: -250px;#}
+{#        overflow-y: auto;#}
+{#        background: #ddd;#}
+{#        -webkit-transition: all 0.5s ease;#}
+{#        -moz-transition: all 0.5s ease;#}
+{#        -o-transition: all 0.5s ease;#}
+{#        transition: all 0.5s ease;#}
+{#    }#}
+{#    #wrapper.toggled #sidebar-wrapper {#}
+{#        width: 250px;#}
+{#    }#}
+
+{#    #page-content-wrapper {#}
+{#        position: absolute;#}
+{#        padding: 15px;#}
+{#        width: 100%;#}
+{#        overflow-x: hidden;#}
+{#    }#}
+{#    .xyz{#}
+{#        min-width: 360px;#}
+{#    }#}
+{#    #wrapper.toggled #page-content-wrapper {#}
+{#        position: relative;#}
+{#        margin-right: 0px;#}
+{#    }#}
+{#    .fixed-brand{#}
+{#        width: auto;#}
+{#    }#}
+{#    /* Sidebar Styles */#}
+
+{#    .sidebar-nav {#}
+{#        position: absolute;#}
+{#        top: 0;#}
+{#        width: 250px;#}
+{#        margin: 0;#}
+{#        padding: 0;#}
+{#        list-style: none;#}
+{#        margin-top: 2px;#}
+{#    }#}
+
+{#    .sidebar-nav li {#}
+{#        line-height: 40px;#}
+{#    }#}
+
+{#    .sidebar-nav li a {#}
+{#        display: block;#}
+{#        padding-left: 4px;#}
+{#        text-decoration: none;#}
+{#        color: #999999 !important;#}
+{#    }#}
+
+{#    .sidebar-nav li a:hover {#}
+{#        text-decoration: none;#}
+{#        color: #fff;#}
+{#        background: rgba(255,255,255,0.2);#}
+{#        border-left: red 2px solid;#}
+{#    }#}
+
+{#    .sidebar-nav li a:active,#}
+{#    .sidebar-nav li a:focus {#}
+{#        text-decoration: none;#}
+{#    }#}
+
+{#    .sidebar-nav > .sidebar-brand {#}
+{#        height: 65px;#}
+{#        font-size: 18px;#}
+{#        line-height: 60px;#}
+{#    }#}
+
+{#    .sidebar-nav > .sidebar-brand a {#}
+{#        color: #999999;#}
+{#    }#}
+
+{#    .sidebar-nav > .sidebar-brand a:hover {#}
+{#        color: #fff;#}
+{#        background: none;#}
+{#    }#}
+{#    .no-margin{#}
+{#        margin:0;#}
+{#    }#}
+
+{#    @media(min-width:768px) {#}
+{#        #wrapper {#}
+{#            padding-left: 250px;#}
+{#        }#}
+{#        .fixed-brand{#}
+{#            width: 250px;#}
+{#        }#}
+{#        #wrapper.toggled {#}
+{#            padding-left: 0;#}
+{#        }#}
+
+{#        #sidebar-wrapper {#}
+{#            width: 250px;#}
+{#        }#}
+
+{#        #wrapper.toggled #sidebar-wrapper {#}
+{#            width: 250px;#}
+{#        }#}
+{#        #wrapper.toggled-2 #sidebar-wrapper {#}
+{#            width: 50px;#}
+{#        }#}
+{#        #wrapper.toggled-2 #sidebar-wrapper:hover {#}
+{#            width: 250px;#}
+{#        }#}
+
+
+{#        #page-content-wrapper {#}
+{#            padding: 20px;#}
+{#            position: relative;#}
+{#            -webkit-transition: all 0.5s ease;#}
+{#            -moz-transition: all 0.5s ease;#}
+{#            -o-transition: all 0.5s ease;#}
+{#            transition: all 0.5s ease;#}
+{#        }#}
+
+{#        #wrapper.toggled #page-content-wrapper {#}
+{#            position: relative;#}
+{#            margin-right: 0;#}
+{#            padding-left: 250px;#}
+{#        }#}
+{#        #wrapper.toggled-2 #page-content-wrapper {#}
+{#            position: relative;#}
+{#            margin-right: 0;#}
+{#            margin-left: -200px;#}
+{#            -webkit-transition: all 0.5s ease;#}
+{#            -moz-transition: all 0.5s ease;#}
+{#            -o-transition: all 0.5s ease;#}
+{#            transition: all 0.5s ease;#}
+{#            width: auto;#}
+
+{#        }#}
+{#    }#}
+
+{#</style>#}
+
+
+{#<div id="wrapper">#}
+{#    <div class="logo-bar">#}
+{#        <div class="button-menu logo-bar-table">#}
+{#            <div class="align-middle text-center logo-bar-cell menu-action">#}
+{#                <div class="navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#                    <ul class="nav navbar-nav">#}
+{#                        <li class="active">#}
+{#                            #}{#                        <button id="menu-toggle-2" type="button" class="button-menu-mobile web-sidebar-btn">#}
+{#                            #}{#                            {{ img('theme::img/menu-icon.svg').data()|raw }}#}
+{#                            #}{#                        </button>#}
+{#                            #}{#                        <button type="button" class="button-menu-mobile mobile-sidebar-btn" id="menu-toggle">#}
+{#                            #}{#                            {{ img('theme::img/menu-icon.svg').data()|raw }}#}
+{#                            #}{#                        </button>#}
+
+{#                            <div class="navbar-header fixed-brand">#}
+{#                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">#}
+{#                                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>#}
+{#                                </button>#}
+{#                            </div>#}
+
+{#                            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#                                <ul class="nav navbar-nav">#}
+{#                                    <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="align-middle text-center logo-bar-cell logo">#}
+{#                <a href="{{ url('admin') }}" class="logo variant-logo">#}
+{#                    {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}#}
+{#                        <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}"#}
+{#                             alt="site icon">#}
+{#                    {% else %}#}
+{#                        {{ img('theme::img/panel-icon.svg').data|raw }}#}
+{#                    {% endif %}#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div id="sidebar-wrapper">#}
+{#        <ul class="sidebar-nav nav-stacked" id="smenu">#}
+
+{#            <li class="active">#}
+{#                <a href="#">#}
+{#                    <i class="fa fa-dashboard "></i>#}
+{#                    Dashboard#}
+{#                </a>#}
+{#                <ul class="nav-stacked" style="list-style-type:none;">#}
+{#                    <li><a href="#">link1</a></li>#}
+{#                    <li><a href="#">link2</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"><span class="fa-stack fa-lg "><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>#}
+{#                <ul class="nav-stacked" style="list-style-type:none;">#}
+{#                    <li><a href="#"><span class="fa-stack fa-lg "><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>#}
+{#                    <li><a href="#"><span class="fa-stack fa-lg "><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>#}
+
+{#                </ul>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"><span class="fa-stack fa-lg "><i class="fa fa-cloud-download fa-stack-1x "></i></span>Overview</a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"> <span class="fa-stack fa-lg "><i class="fa fa-cart-plus fa-stack-1x "></i></span>Events</a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"><span class="fa-stack fa-lg "><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"><span class="fa-stack fa-lg "><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>#}
+{#            </li>#}
+{#            <li>#}
+{#                <a href="#"><span class="fa-stack fa-lg "><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{#</div>#}
+
+{#<script>#}
+{#    $("#menu-toggle").click(function(e) {#}
+{#        e.preventDefault();#}
+{#        $("#wrapper").toggleClass("toggled");#}
+{#    });#}
+{#    $("#menu-toggle-2").click(function(e) {#}
+{#        e.preventDefault();#}
+{#        $("#wrapper").toggleClass("toggled-2");#}
+{#        $('#smenu ul').hide();#}
+{#    });#}
+
+{#    function initMenu() {#}
+{#        $('#smenu ul').hide();#}
+{#        $('#smenu ul').children('.current').parent().show();#}
+{#        //$('#smenu ul:first').show();#}
+{#        $('#smenu li a').click(#}
+{#            function() {#}
+{#                var checkElement = $(this).next();#}
+{#                if((checkElement.is('ul')) && (checkElement.is(':visible'))) {#}
+{#                    return false;#}
+{#                }#}
+{#                if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {#}
+{#                    $('#smenu ul:visible').slideUp('normal');#}
+{#                    checkElement.slideDown('normal');#}
+{#                    return false;#}
+{#                }#}
+{#            }#}
+{#        );#}
+{#    }#}
+{#    $(document).ready(function() {initMenu();});#}
+{#</script>#}

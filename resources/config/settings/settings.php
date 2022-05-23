@@ -138,6 +138,12 @@ return [
             'default_value' => '#213c62'
         ]
     ],
+    'input_text_color' => [
+        'type' => 'anomaly.field_type.colorpicker',
+        'config' => [
+            'default_value' => '#213c62'
+        ]
+    ],
     'input_focused_background_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
@@ -219,7 +225,7 @@ return [
     'dark_text_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#ddd'
+            'default_value' => '#fff'
         ]
     ],
     'dark_input_background_color' => [
@@ -229,6 +235,12 @@ return [
         ]
     ],
     'dark_input_placeholder_color' => [
+        'type' => 'anomaly.field_type.colorpicker',
+        'config' => [
+            'default_value' => '#ccc'
+        ]
+    ],
+    'dark_input_text_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
             'default_value' => '#ccc'

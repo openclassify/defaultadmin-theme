@@ -2,14 +2,14 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Kenar Çubuğu Üzerine Gelme',
+        'name' => 'Kenar Çubuğu Üzerine Gelme',
         'instructions' => 'Fareyle üzerine gelindiğinde kenar çubuğu genişletilsin mi?',
     ],
-    'navigation'    => [
-        'name'         => 'Navigasyon',
+    'navigation' => [
+        'name' => 'Navigasyon',
         'instructions' => '<em>varsayılan</em> gezinme sırasını belirtin.',
-        'warning'      => 'İlk erişilebilir gezinme öğesi <strong>ana</strong> alanı olarak kullanılır.',
-        'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
+        'warning' => 'İlk erişilebilir gezinme öğesi <strong>ana</strong> alanı olarak kullanılır.',
+        'reorder' => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
     "login_icon" => [
         'name' => 'Oturum Açma Simgesi',
@@ -31,5 +31,8 @@ return [
     ],
     "active_sidebar_border_color" => [
         'name' => 'Etkin Kenar Çubuğu Kenarlık Rengi',
-    ]
+    ],
+    'interactive_side_menu' => [
+        'name' => 'Etkileşimli yan menü',
+    ],
 ];

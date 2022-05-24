@@ -53,7 +53,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     font-family: 'Poppins';
     overflow: visible;
     padding-top: 0px;
-    margin-left: 240px;
+    margin-left: 265px;
     background-size: 55px 100px;
     background-repeat: no-repeat;
     transition: min-height 100ms;
@@ -170,7 +170,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
 #footer {
     padding: 1em 3em;
     overflow: hidden;
-    margin-left: 240px;
+    margin-left: 265px;
     background: #ffffff;
 }
 #footer ul {
@@ -237,6 +237,7 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }} !impor
     position: fixed;
     top: 0;
     left:0;
+    z-index: 2000;
 }
 .logo-bar-table {
     display: table;
@@ -531,7 +532,7 @@ transition: width 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
     margin: 8px 0;
     display: block;
     padding: 0 10px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 39px;
     position: relative;
     text-align: center;
@@ -614,7 +615,7 @@ select + .select2 {
     margin-bottom: 15px;
 }
 .collapse {
-    display: block;
+    display: none;
 }
 @media (max-width: 768px) {
     .collapse {

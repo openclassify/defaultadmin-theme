@@ -148,5 +148,8 @@ return [
     ],
     'dark_input_text_color' => [
         'name' => 'Input text color'
-    ]
+    ],
+    'interactive_side_menu' => [
+        'name' => 'interactive side menu',
+    ],
 ];

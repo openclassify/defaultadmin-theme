@@ -65,9 +65,13 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown float-left">
-                            {% include "theme::partials/search-box" %}
-                        </li>
+                        {% if not config('admin_theme::interactive_side_menu',false) %}
+                            <li class="nav-item dropdown float-left">
+                                {% include "theme::partials/search-box" %}
+                            </li>
+                        {% else %}
+                            <div class="topbar-breadcrumb">{{ breadcrumb() }}</div>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

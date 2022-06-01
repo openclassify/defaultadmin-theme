@@ -11,10 +11,10 @@ $(function () {
         return false;
     });
 
-    // Open search
-    input.on('focus', function () {
-        form.addClass('open');
-    });
+    // // Open search
+    // input.on('focus', function () {
+    //     form.addClass('open');
+    // });
 
     // Close search.
     $(window).click(function () {
@@ -27,6 +27,11 @@ $(function () {
 
     // Handle simple searching
     input.on('keydown', function (e) {
+
+        if (input.val().length < 1)
+        {
+            form.removeClass('open');
+        }
 
         /**
          * Capture the down arrow.
@@ -156,6 +161,11 @@ $(function () {
     });
 
     input.on('keyup', function (e) {
+
+        if (input.val().length > 0)
+        {
+            form.addClass('open');
+        }
 
         /**
          * If the keyup was a an arrow

@@ -35,10 +35,10 @@
     {% endfor %}
 </div>
 <script>
-    var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}"
-    var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}"
-    var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}"
-    var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}"
+    var default_country = "{{ form.fields.country_id.value ?? setting_value('visiosoft.module.location::default_country') }}"
+    var default_city = "{{ form.fields.city.value ?? setting_value('visiosoft.module.location::default_city') }}"
+    var default_district = "{{ form.fields.district.value ?? setting_value('visiosoft.module.location::default_district') }}"
+    var default_neighborhood = "{{ form.fields.neighborhood.value ?? setting_value('visiosoft.module.location::default_neighborhood') }}"
     var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
 </script>
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/users/filterLocation.js") }}

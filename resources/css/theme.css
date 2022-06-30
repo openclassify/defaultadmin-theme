@@ -2742,6 +2742,10 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_col
     width: 3px;
 }
 
+.input-wrapper .modal {
+    z-index: 2000 !important;
+}
+
 .ps-container > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y, .ps-container > .ps-scrollbar-y-rail:active > .ps-scrollbar-y {
     width: 8px;
 }
@@ -3549,3 +3553,4 @@ body.sidebars--static .logo {
         margin-right: 15px;
     }
 }
+

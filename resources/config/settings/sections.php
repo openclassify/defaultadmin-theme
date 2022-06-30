@@ -16,7 +16,8 @@ return [
                     'active_sidebar_border_color', 'primary_color', 'secondary_color',
                     'background_color', 'block_background_color', 'negative_color',
                     'positive_color', 'warning_color', 'info_color', 'menu_link_color', 'links_color',
-                    'links_hover_active_color', 'text_color', 'input_background_color', 'input_placeholder_color',
+                    'links_hover_active_color', 'text_color', 'input_background_color',
+                    'input_text_color', 'input_placeholder_color',
                     'input_focused_background_color', 'input_focused_border_color'
                 ]
             ],
@@ -27,7 +28,7 @@ return [
                     'dark_negative_color', 'dark_positive_color', 'dark_warning_color', 'dark_info_color',
                     'dark_active_sidebar_border_color', 'dark_menu_link_color', 'dark_links_color',
                     'dark_links_hover_active_color', 'dark_text_color', 'dark_input_background_color',
-                    'dark_input_placeholder_color', 'dark_input_focused_background_color',
+                    'dark_input_placeholder_color', 'dark_input_text_color', 'dark_input_focused_background_color',
                     'dark_input_focused_border_color'
                 ]
             ],

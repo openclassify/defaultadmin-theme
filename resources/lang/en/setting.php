@@ -2,14 +2,14 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
+        'name' => 'Sidebar Hover',
         'instructions' => 'Expand the sidebar on hover?',
     ],
-    'navigation'    => [
-        'name'         => 'Navigation',
+    'navigation' => [
+        'name' => 'Navigation',
         'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'warning' => 'The first accessible navigation item is used as the <strong>home</strong> area.',
+        'reorder' => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
     ],
     "login_icon" => [
         'name' => 'Login Icon',
@@ -142,6 +142,12 @@ return [
     ],
     'help_two_link' => [
         'name' => 'Help 2 link'
+    ],
+    'input_text_color' => [
+        'name' => 'Input text color'
+    ],
+    'dark_input_text_color' => [
+        'name' => 'Input text color'
     ],
     'interactive_side_menu' => [
         'name' => 'interactive side menu',

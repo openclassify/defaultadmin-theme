@@ -23,7 +23,7 @@
 a { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }} !important; transition: 0.5s;}
 a:hover { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color') }} !important;}
 .form-control::placeholder {
-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color')}} !important;
 }
 .form-control:disabled {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
@@ -36,7 +36,7 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused
 }
 .choices[data-type*=select-one] .choices__input {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color')}};
 }
 .choices__input {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
@@ -64,7 +64,7 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused
 }
 .custom-select:focus {
     border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color')}};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color')}};
 }
 .tagify__input {
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}} !important;
@@ -111,24 +111,24 @@ fill: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !impo
 }
 .select2-container--default .select2-selection--single {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color')}};
 }
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color') }};
     border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color') }};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color') }};
 }
 .select2-container--open .select2-dropdown--below {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color') }};
 }
 .select2-container--default .select2-search--dropdown .select2-search__field {
     background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color') }};
     border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color') }};
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color') }};
 }
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }} !important;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color') }} !important;
 }
 .navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .active > .nav-link:focus, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .nav-link.active:hover {
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }};
@@ -220,7 +220,7 @@ opacity: 1;
     color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color')}};
 }
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_text_color') }} !important;
 }
 .redactor-toolbar {
     background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
@@ -414,4 +414,17 @@ fill: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }};
 }
 .progress-end-date {
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+
+.form-control::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
+opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
 }

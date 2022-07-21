@@ -33,17 +33,21 @@
         <ul class="sidebar-nav nav-stacked" id="ocify-menu">
             {% for group_key,group in getInteractiveMenus() %}
                 <li class="sidebar-group {{ group.active ? 'active' }}">
-                    <a class="sidebar-group-link" title="{{ group.title }}" data-toggle="collapse" data-target="#{{ group_key }}M"
+                    <a class="sidebar-group-link" title="{{ group.title }}" data-toggle="collapse"
+                       data-target="#{{ group_key }}M"
                        aria-expanded="{{ group.active ? 'true' : 'false' }}">
                         <span>
                             <span class="icon">
-                                {{ img(group.icon).data|raw }}
+                                {% if group.icon %}
+                                    {{ img(group.icon).data|raw }}
+                                {% endif %}
                             </span>
                             <span class="title">{{ group.title }}</span>
                         </span>
                         <i class="fa fa-chevron-down chevron"></i>
                     </a>
-                    <div class="collapse {{ group.active ? 'in' }} group-sublist" id="{{ group_key }}M" aria-expanded="false">
+                    <div class="collapse {{ group.active ? 'in' }} group-sublist" id="{{ group_key }}M"
+                         aria-expanded="false">
                         <ul class="nav-stacked sidebar-items">
                             {% for addon_key,addon in group.addons %}
                                 <li class="nav-item sidebar-addon {{ addon.active ? 'active' }}">
@@ -58,7 +62,8 @@
                                         </span>
                                         <i class="fa fa-chevron-down"></i>
                                     </a>
-                                    <div class="sidebar-sublist collapse {{ addon.active ? 'in' }} ml-2" id="{{ addon_key }}" aria-expanded="false">
+                                    <div class="sidebar-sublist collapse {{ addon.active ? 'in' }} ml-2"
+                                         id="{{ addon_key }}" aria-expanded="false">
                                         <ul class="flex-column nav">
                                             {% for section in addon.sections %}
                                                 <li class="sub-item {{ section.active ? 'active' }}">

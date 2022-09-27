@@ -45,6 +45,11 @@
     ]
 ) }}
 
+<script>
+    var cancelText = "{{ trans("streams::button.cancel") }}";
+    var confirmText = "{{ trans("streams::button.continue") }}";
+</script>
+
 {# Need to figure out globing to scripts.js - ends up with a /* file #}
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/ajax.js") }}
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/confirm.js") }}

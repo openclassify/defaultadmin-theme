@@ -19,11 +19,11 @@
                 buttons: {
                     cancel: {
                         visible: true,
-                        text: event.target.dataset.cancel_text || 'Cancel'
+                        text: event.target.dataset.cancel_text || cancelText
                     },
                     confirm: {
                         closeModal: event.target.dataset.close == undefined ? false : (event.target.dataset.close == 'true'),
-                        text: event.target.dataset.confirm_text || 'OK'
+                        text: event.target.dataset.confirm_text || confirmText
                     },
                 }
             }).then((value) => {

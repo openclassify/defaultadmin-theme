@@ -26,7 +26,7 @@
 }
 
 #sidebar-wrapper::-webkit-scrollbar-button {
-    display:none;
+    display: none;
 }
 
 #wrapper.toggled {
@@ -96,12 +96,12 @@
     font-weight: 400;
     font-family: 'Poppins';
     font-size: 16px;
-    padding-right:20px;
+    padding-right: 20px;
     justify-content: space-between;
 }
 
 .sidebar-nav .sidebar-addon.active .sidebar-addon-link {
-    color: #fff!important;
+    color: #fff !important;
     font-weight: 600;
 }
 
@@ -110,12 +110,12 @@
 }
 
 .sidebar-nav .sidebar-sublist ul {
-    padding:0;
+    padding: 0;
 }
 
 #wrapper.toggled-2 .title,
 #wrapper.toggled-2 .navbar-form,
-#wrapper.toggled-2 .group-sublist{
+#wrapper.toggled-2 .group-sublist {
     display: none;
 }
 
@@ -139,7 +139,7 @@
     transition: all 700ms ease;
 }
 
-.sidebar-nav .sidebar-sublist .sub-item.active a{
+.sidebar-nav .sidebar-sublist .sub-item.active a {
     color: #BFD3E9 !important;
 }
 
@@ -168,12 +168,12 @@
     align-items: center;
 }
 
-.sidebar-nav .sidebar-group .sidebar-group-link span:not(.icon){
+.sidebar-nav .sidebar-group .sidebar-group-link span:not(.icon) {
     align-items: center;
     display: flex;
 }
 
-.sidebar-nav .sidebar-group .sidebar-group-link span .icon{
+.sidebar-nav .sidebar-group .sidebar-group-link span .icon {
     padding-top: 3px;
 }
 
@@ -280,7 +280,7 @@
     }
 
     #wrapper.toggled-2 #sidebar-wrapper,
-    #wrapper.toggled-2 .logo-bar{
+    #wrapper.toggled-2 .logo-bar {
         width: 70px;
     }
 
@@ -298,7 +298,6 @@
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
     }
-
 
 
     #page-content-wrapper {
@@ -416,7 +415,13 @@ li.active {
 
 #sidebar-wrapper .navbar-form input {
     width: 230px;
-    background-color: rgba(255,255,255,0.2) !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+#sidebar-wrapper .navbar-form input:active,
+#sidebar-wrapper .navbar-form input:focus {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    color: #000 !important;
 }
 
 #sidebar-wrapper .navbar-form button {
@@ -426,4 +431,14 @@ li.active {
 
 .logo-bar-table {
     background-color: #30426a !important;
+}
+
+#ocify-menu .tooltip {
+    position: fixed;
+}
+
+#ocify-menu .tooltip .tooltip-inner {
+    background: rgba(255,255,255,0.9);
+    color: #000 !important;
+    margin-left: 1rem;
 }

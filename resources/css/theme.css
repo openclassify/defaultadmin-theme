@@ -449,6 +449,7 @@ color: #ddd;
 }
 #search .results {
     min-width: 15rem;
+    margin-left: 1rem;
 }
 
 #Path_21097, #Line_828, #Path_21098 {

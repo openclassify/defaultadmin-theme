@@ -28,16 +28,16 @@
                                 {% endif %}
                             </a>
                             <ul class="dropdown-menu-right dropdown-menu">
-                                <li class="dropdown-item">
-                                    <a href="/" target="_blank">
+                                <li class="dropdown-item pl-1">
+                                    <a href="/" class="d-flex" target="_blank">
                                         {{ img('theme::img/view_site.svg').data|raw }}
-                                        {{ trans('theme::control_panel.view_site') }}
+                                        <span>{{ trans('theme::control_panel.view_site') }}</span>
                                     </a>
                                 </li>
-                                <li class="dropdown-item">
-                                    <a href="/admin/logout">
+                                <li class="dropdown-item pl-1">
+                                    <a href="/admin/logout" class="d-flex">
                                         {{ img('theme::img/logout.svg').data|raw }}
-                                        {{ trans('theme::control_panel.logout') }}
+                                        <span>{{ trans('theme::control_panel.logout') }}</span>
                                     </a>
                                 </li>
                             </ul>

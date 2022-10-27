@@ -507,6 +507,10 @@ color: #ddd;
     vertical-align: middle;
 }
 
+.topbar-useraction .dropdown-menu li span {
+    margin-left: 5px;
+}
+
 #sidebar {
     top: 70px;
     bottom: 0;

@@ -16,16 +16,6 @@
 {{ asset_add("theme.css", "visiosoft.theme.base::css/intlTelInput.css") }}
 
 
-{{ asset_add(
-    "build.css",
-    "visiosoft.theme.defaultadmin::css/theme.css",
-    [
-        "required",
-        "as:t4t5/sweetalert.css",
-        "as:jshjohnson/Choices.css",
-        "as:rstacruz/nprogress.css",
-    ]
-) }}
 
 {{ asset_add("theme.js", "visiosoft.theme.defaultadmin::js/vendor/*") }}
 {{ asset_add("theme.js", "visiosoft.theme.defaultadmin::js/theme/polyfills.js") }}
@@ -68,7 +58,14 @@
 {{ asset_script('visiosoft.theme.defaultadmin::js/visiosoft.js') }}
 <style type="text/css">
     {{ asset_inline("theme.css") }}
-    {{ asset_inline("build.css") }}
+    {{ asset_inline("visiosoft.theme.defaultadmin::css/theme.css",
+    [
+        "required",
+        "as:t4t5/sweetalert.css",
+        "as:jshjohnson/Choices.css",
+        "as:rstacruz/nprogress.css",
+    ]
+    ) }}
     {% if setting_value('visiosoft.theme.defaultadmin::dark_mode') %}
     /*Dark mode is active*/
     {{ asset_inline("visiosoft.theme.defaultadmin::css/dark_mode.css") }}

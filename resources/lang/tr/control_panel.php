@@ -13,4 +13,6 @@ return [
 
     // Adv Export
     'choose_file_type' => 'Dışa Aktarmak İçin Dosya Türünü Seçin',
+
+    'login_to_admin' => ['name' => 'Yönetici Girişi']
 ];

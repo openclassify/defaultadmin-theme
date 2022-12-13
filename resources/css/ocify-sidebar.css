@@ -105,6 +105,12 @@
     font-weight: 600;
 }
 
+.sidebar-nav .sidebar-addon .sidebar-addon-link span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .sidebar-nav .sidebar-sublist {
     margin-left: 45px;
 }

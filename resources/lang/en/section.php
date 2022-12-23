@@ -10,9 +10,6 @@ return [
     'help' => [
         'name' => 'Help'
     ],
-    'dark_mode' => [
-        'name' => 'Dark Mode'
-    ],
     'light_mode' => [
         'name' => 'Light Mode'
     ]

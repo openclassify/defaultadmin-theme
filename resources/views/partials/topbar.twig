@@ -43,9 +43,7 @@
                             </ul>
                         </li>
                         {% set helpColor = setting_value('visiosoft.theme.defaultadmin::primary_color') %}
-                        {% if setting_value('visiosoft.theme.defaultadmin::dark_mode') %}
-                            {% set helpColor = setting_value('visiosoft.theme.defaultadmin::dark_text_color') %}
-                        {% endif %}
+
                         <li class="nav-item dropdown floatright help-icon" style="padding-top: 5px; display: none;">
                             <a href="javascript:void(0);" data-toggle="dropdown">
                                 {{ img('visiosoft.theme.defaultadmin::img/guide.svg').data|raw }}

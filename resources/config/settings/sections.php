@@ -20,17 +20,6 @@ return [
                     'input_focused_background_color', 'input_focused_border_color'
                 ]
             ],
-            'dark_mode' => [
-                'title' => 'visiosoft.theme.defaultadmin::section.dark_mode.name',
-                'fields' => [
-                    'dark_mode', 'dark_primary_color', 'dark_secondary_color', 'dark_background_color',
-                    'dark_negative_color', 'dark_positive_color', 'dark_warning_color', 'dark_info_color',
-                    'dark_active_sidebar_border_color', 'dark_menu_link_color', 'dark_links_color',
-                    'dark_links_hover_active_color', 'dark_text_color', 'dark_input_background_color',
-                    'dark_input_placeholder_color', 'dark_input_focused_background_color',
-                    'dark_input_focused_border_color'
-                ]
-            ],
             'help' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.help.name',
                 'fields' => [

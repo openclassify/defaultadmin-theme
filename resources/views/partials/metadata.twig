@@ -41,16 +41,16 @@
 </script>
 
 {# Need to figure out globing to scripts.js - ends up with a /* file #}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/ajax.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/confirm.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/initialize.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/keyboard.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/modal.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/prompt.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/push.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/search.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/select2.js") }}
-{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/alert.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/ajax.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/confirm.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/initialize.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/keyboard.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/modal.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/prompt.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/push.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/search.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/select2.js") }}
+{{ asset_add("admin-scripts.js", "visiosoft.theme.defaultadmin::js/theme/alert.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.maskedinput.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/intlTelInput.min.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/utils.js") }}
@@ -82,4 +82,5 @@
 {{ constants() }}
 
 {{ asset_script("theme.js") }}
+{{ asset_script("admin-scripts.js") }}
 {{ asset_script("visiosoft.js") }}

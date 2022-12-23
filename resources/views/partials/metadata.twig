@@ -66,10 +66,6 @@
         "as:rstacruz/nprogress.css",
     ]
     ) }}
-    {% if setting_value('visiosoft.theme.defaultadmin::dark_mode') %}
-    /*Dark mode is active*/
-    {{ asset_inline("visiosoft.theme.defaultadmin::css/dark_mode.css") }}
-    {% endif %}
 </style>
 
 {% if locale().isRtl() %}

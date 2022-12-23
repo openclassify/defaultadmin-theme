@@ -74,9 +74,6 @@ return [
     "dark_info_color" => [
         'name' => 'Dark mode info color'
     ],
-    "dark_mode" => [
-        'name' => 'Dark mode'
-    ],
     'dark_links_color' => [
         'name' => 'Dark mode links color'
     ],

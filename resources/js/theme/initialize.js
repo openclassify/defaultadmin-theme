@@ -80,12 +80,12 @@ $(document).on('ready', function () {
         var checkTableFixed = function () {
             if ($responsiveTable.outerWidth() < $table.outerWidth() || window.innerWidth < 992 || isAtTop()) {
                 $thead.css({position: 'relative', top: '0px'});
-                $thead.css({zIndex: '1010'});
+                $thead.css({zIndex: '99'});
                 $table.css({marginTop: '0'});
             } else {
                 $thead.css({position: 'fixed', top: topBarHeight + 'px'});
                 $table.css({marginTop: $thead.height() + 'px'});
-                $thead.css({zIndex: '1010'});
+                $thead.css({zIndex: '99'});
             }
         };
 
@@ -123,7 +123,7 @@ $(document).on('ready', function () {
             var scrollTop = $('body').scrollTop() || $('html').scrollTop();
             var windowHeight = window.innerHeight;
             var documentHeight = document.body.scrollHeight;
-            
+
             return scrollTop + windowHeight - documentHeight + controlsHeight + 30 > 0;
         };
 

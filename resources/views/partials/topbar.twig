@@ -22,7 +22,7 @@
                                     {{ name|raw }}
                                 </button>
                                 {% if user().file is not empty %}
-                                    {{ img(user().file).width(47).class('rounded-circle')|raw }}
+                                    {{ img(user().file).width(47).height(47).class('rounded-circle')|raw }}
                                 {% else %}
                                     {{ img('theme::img/no-avatar.svg').width(47).class('rounded-circle')|raw }}
                                 {% endif %}

@@ -110,6 +110,9 @@ return [
     'menu_link_color' => [
         'name' => 'Menu links color'
     ],
+    'menu_icon_color' => [
+        'name' => 'Menu icon color'
+    ],
     'text_color' => [
         'name' => 'Text color'
     ],

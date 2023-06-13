@@ -51,7 +51,8 @@ return [
     "primary_color" => [
         "type" => "anomaly.field_type.colorpicker",
         "config" => [
-            "default_value" => '#1d3557',
+            "format" => "rgba",
+            "default_value" => "rgba(29, 53, 87, 1)",
         ]
     ],
     "secondary_color" => [
@@ -69,7 +70,8 @@ return [
     "block_background_color" => [
         "type" => "anomaly.field_type.colorpicker",
         "config" => [
-            "default_value" => '#FFF',
+            "format" => "rgba",
+            "default_value" => 'rgba(255, 255, 255, 1)',
         ]
     ],
     "negative_color" => [
@@ -102,6 +104,12 @@ return [
             'default_value' => '#ffffff'
         ]
     ],
+    'menu_icon_color' => [
+        'type' => 'anomaly.field_type.colorpicker',
+        'config' => [
+            'default_value' => '#ffffff'
+        ]
+    ],
     'links_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
@@ -111,7 +119,8 @@ return [
     'links_hover_active_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#1d3557'
+            "format" => "rgba",
+            'default_value' => 'rgba(29, 53, 87, 1)'
         ]
     ],
     'text_color' => [

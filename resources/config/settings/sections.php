@@ -7,17 +7,35 @@ return [
             'general_setting' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.general_setting.name',
                 'fields' => [
-                    'title', 'interactive_side_menu','sidebar_hover', 'login_icon', 'panel_icon', 'footer_copyright_org_name'
+                    'title',
+                    'interactive_side_menu',
+                    'sidebar_hover',
+                    'login_icon',
+                    'panel_icon',
+                    'footer_copyright_org_name'
                 ],
             ],
             'light_mode' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.light_mode.name',
                 'fields' => [
-                    'active_sidebar_border_color', 'primary_color', 'secondary_color',
-                    'background_color', 'block_background_color', 'negative_color',
-                    'positive_color', 'warning_color', 'info_color', 'menu_link_color', 'links_color',
-                    'links_hover_active_color', 'text_color', 'input_background_color', 'input_placeholder_color',
-                    'input_focused_background_color', 'input_focused_border_color'
+                    'active_sidebar_border_color',
+                    'primary_color',
+                    'secondary_color',
+                    'background_color',
+                    'block_background_color',
+                    'negative_color',
+                    'positive_color',
+                    'warning_color',
+                    'info_color',
+                    'menu_link_color',
+                    'menu_icon_color',
+                    'links_color',
+                    'links_hover_active_color',
+                    'text_color',
+                    'input_background_color',
+                    'input_placeholder_color',
+                    'input_focused_background_color',
+                    'input_focused_border_color'
                 ]
             ],
             'help' => [

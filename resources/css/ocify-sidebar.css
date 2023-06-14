@@ -42,7 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 300px;
+  transition: width 0.3s ease-in-out;
+}
+#wrapper.toggled-2 .logo-bar {
+  width: 110px;
 }
 #wrapper .logo-bar .logo {
   max-width: 60%;

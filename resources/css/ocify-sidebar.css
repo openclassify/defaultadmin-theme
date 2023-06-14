@@ -121,6 +121,11 @@
 #wrapper .sidebar-wrapper .sidebar-nav {
   width: 100%;
   padding: 0 16px;
+  height: calc(100vh - 170px);
+  overflow: scroll;
+}
+#wrapper .sidebar-wrapper .sidebar-nav::-webkit-scrollbar {
+  width: 0;
 }
 #wrapper .sidebar-wrapper .sidebar-nav .sidebar-group {
   display: flex;

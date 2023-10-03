@@ -61,7 +61,10 @@
                                             {% if addon.sections is defined %}
                                                 {% for section in addon.sections %}
                                                     <li class="sub-item {{ section.active ? 'active' }}">
-                                                        <a href="{{ section.href }}" title="{{ trans(section.title) }}"
+                                                        <a href="{{ section.href }}"
+                                                           data-toggle="{{ section['data-toggle'] }}"
+                                                           data-target="{{ section['data-target'] }}"
+                                                           title="{{ trans(section.title) }}"
                                                            class="text-truncate sidebar-title">
                                                             {{ trans(section.title) }}
                                                         </a>

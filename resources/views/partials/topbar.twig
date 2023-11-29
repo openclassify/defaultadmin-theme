@@ -20,8 +20,8 @@
                                 <button class="btn user-action-dropdown dropdown-toggle none-border">
                                     {{ name|raw }}
                                 </button>
-                                {% if auth_user().file is not empty %}
-                                    {{ img(auth_user().file).width(47).height(47).class('rounded-circle')|raw }}
+                                {% if auth_user().getAttribute('file_id') %}
+                                    {{ img(auth_user().file().first()).width(47).height(47).class('rounded-circle')|raw }}
                                 {% else %}
                                     {{ img('theme::img/no-avatar.svg').width(47).class('rounded-circle')|raw }}
                                 {% endif %}

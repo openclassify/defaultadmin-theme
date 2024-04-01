@@ -1,16 +1,16 @@
+if (window.innerWidth <= 768) {
+    $("#wrapper").addClass('toggled-2');
+}
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
+    $("#wrapper").toggleClass('toggled');
 });
 $("#menu-toggle-2").click(function (e) {
     e.preventDefault();
-    $("#wrapper").toggleClass("toggled-2");
-    $(".top-bar").toggleClass("wide-top-bar");
-    $("#main, #footer").toggleClass("wide-content");
-
-    $("#menu-toggle-2 i").toggleClass("fa-angle-left fa-angle-right");
+    $("#wrapper").toggleClass('toggled-2');
+    $(".top-bar").toggleClass('wide-top-bar');
+    $("#main, #footer").toggleClass('wide-content');
 });
-
 
 function flexExpended(class_name) {
     $(class_name).on('click', function () {

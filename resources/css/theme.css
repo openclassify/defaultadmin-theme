@@ -3610,3 +3610,41 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::input_placeholder_color')
 .repeater-item-controls a i{
     color: #fff !important;
 }
+
+.table th, .table td {
+    border: 0 !important;
+    border-bottom: 1px solid #E5E5E5 !important;
+}
+
+.status-led {
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.table > thead > tr > th, .table > thead > tr > td > a, .table > tbody > tr > th > a, .table > tbody > tr > td > a, .table > tfoot > tr > th > a, .table > tfoot > tr > td > a, .table thead th a {
+    color: #000000 !important;
+}
+
+.table > tbody > tr > td {
+    color: #000000;
+}
+.priority-btn {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.priority-high-btn {
+    color: #F56666;
+    background-color: rgba(245, 102, 102, 0.1);
+}
+.priority-normal-btn {
+    color: #FFBB00;
+    background-color: rgba(255, 187, 0, 0.1);
+}
+.priority-low-btn {
+    background-color: #fafafa;
+}

@@ -3397,13 +3397,14 @@ border-color: {{setting_value('visiosoft.theme.defaultadmin::input_focused_borde
 
 .breadcrumb {
     border-radius: 0 !important;
-    background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::block_background_color') }} !important;
     font-size: 0.8rem;
     margin-top: 15px !important;
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
+
 .breadcrumb li.active {
 background-color: inherit !important;
 }
@@ -3499,12 +3500,22 @@ body.sidebars--static .logo {
 }
 
 @media (max-width: 991px) {
+    .breadcrumb {
+        border-radius: 0 !important;
+        background-color: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }} !important;
+        font-size: 0.8rem;
+        margin-top: 15px !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
     .login-form-block .form-control {
         min-width: 200px;
     }
     .top-bar {
-    background: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color')}};
-    width: calc(100% - 60px);
+    background: {{ setting_value('visiosoft.theme.defaultadmin::background_color') }};
+    width: 100%;
+    padding-left: 28px;
     }
 
     .top-bar .user-action-dropdown {

@@ -172,7 +172,7 @@ $(function () {
          * show only those containing value.
          */
         items.each(function () {
-            if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+            if ($(this).text().toLocaleLowerCase("tr-TR").indexOf(value.toLocaleLowerCase("tr-TR")) >= 0) {
                 $(this).show();
             } else {
                 $(this).hide();

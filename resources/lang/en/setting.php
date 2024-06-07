@@ -146,4 +146,7 @@ return [
     'interactive_side_menu' => [
         'name' => 'interactive side menu',
     ],
+    'inline-css-admin-theme' => [
+        'name' => 'Inline CSS Admin Theme',
+    ],
 ];

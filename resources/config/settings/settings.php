@@ -279,4 +279,11 @@ return [
             'default_value' => false,
         ],
     ],
+    'inline-css-admin-theme' => [
+        'type' => 'anomaly.field_type.editor',
+        'config' => [
+            'mode' => 'css',
+            'word_wrap' => false
+        ]
+    ],
 ];

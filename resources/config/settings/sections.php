@@ -8,6 +8,7 @@ return [
                 'title' => 'visiosoft.theme.defaultadmin::section.general_setting.name',
                 'fields' => [
                     'title',
+                    'inline-css-admin-theme',
                     'interactive_side_menu',
                     'sidebar_hover',
                     'login_icon',

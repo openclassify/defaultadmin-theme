@@ -6,25 +6,22 @@
     <div class="dropdown-menu results" style="max-height: 800px;overflow-x: auto;">
         {% set moduleName = "" %}
         {% for key, navigation in template.cp.navigation %}
-
-            {% if moduleName != trans(navigation.breadcrumb) %}
-                <a style="color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }}!important;"
-                   class="dropdown-item" {{ html_attributes(navigation.attributes) }}  {{ navigation.class }}>
+            <a style="color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }}!important;"
+               class="dropdown-item" {{ html_attributes(navigation.attributes) }}  {{ navigation.class }}>
                  <span class="title">
                         {{ trans(navigation.breadcrumb) }}
                 </span>
-                </a>
-            {% endif %}
-
-            <a class="dropdown-item" {{ html_attributes(navigation.attributes) }}  {{ navigation.class }}>
-
-                <span class="title">
-                     - {{ trans(navigation.title) }}
-                    <span style="color:transparent; font-size: 14px;"> ( {{ trans(navigation.breadcrumb) }} ) </span>
-
-                </span>
             </a>
-            {% set moduleName =  trans(navigation.breadcrumb) %}
+
+            {% set sections = getSections(navigation.slug) %}
+            {% for section in sections['main'] %}
+                <a class="dropdown-item" href="{{ section.href }}">
+                    <span class="title">
+                        - {{ trans(section.title) }}
+                        <span style="color:transparent; font-size: 14px;"> ( {{ trans(navigation.breadcrumb) }} ) </span>
+                    </span>
+                </a>
+            {% endfor %}
         {% endfor %}
     </div>
 </form>

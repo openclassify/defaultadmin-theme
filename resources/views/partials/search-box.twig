@@ -12,16 +12,6 @@
                         {{ trans(navigation.breadcrumb) }}
                 </span>
             </a>
-
-            {% set sections = getSections(navigation.slug) %}
-            {% for section in sections['main'] %}
-                <a class="dropdown-item" href="{{ section.href }}">
-                    <span class="title">
-                        - {{ trans(section.title) }}
-                        <span style="color:transparent; font-size: 14px;"> ( {{ trans(navigation.breadcrumb) }} ) </span>
-                    </span>
-                </a>
-            {% endfor %}
         {% endfor %}
     </div>
 </form>
